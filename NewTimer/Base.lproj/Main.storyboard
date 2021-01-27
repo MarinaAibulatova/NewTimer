@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Menu Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MenuController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="dqj-Ng-uXz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNq-ES-7LD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="0GW-Zf-dkT">
+                                        <rect key="frame" x="128.66666666666666" y="216" width="156.99999999999997" height="304"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qn-KR-Rn9">
+                                                <rect key="frame" x="0.0" y="0.0" width="157" height="46"/>
+                                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="tintColor" red="0.9801899790763855" green="0.18934255838394165" blue="0.032248783856630325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Timer"/>
+                                                <connections>
+                                                    <segue destination="wj7-FX-fY1" kind="show" id="zG1-bU-Obo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6G-7l-zKf" userLabel="EmomTimer">
+                                                <rect key="frame" x="0.0" y="86" width="157" height="46"/>
+                                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="tintColor" red="0.9801899790763855" green="0.18934255838394165" blue="0.032248783856630325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Emom timer"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9n-gM-S1t" userLabel="MyExercises">
+                                                <rect key="frame" x="0.0" y="172" width="157" height="46"/>
+                                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="tintColor" red="0.9801899790763855" green="0.18934255838394165" blue="0.032248783856630325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="My exercises"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bh8-N0-FDD" userLabel="About">
+                                                <rect key="frame" x="0.0" y="258" width="157" height="46"/>
+                                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="tintColor" red="0.9801899790763855" green="0.18934255838394165" blue="0.032248783856630325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="About"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0GW-Zf-dkT" firstAttribute="centerX" secondItem="jNq-ES-7LD" secondAttribute="centerX" id="DOv-Ey-05v"/>
+                                    <constraint firstItem="0GW-Zf-dkT" firstAttribute="centerY" secondItem="jNq-ES-7LD" secondAttribute="centerY" id="mES-tE-W13"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jNq-ES-7LD" secondAttribute="trailing" id="6Bz-YZ-4x0"/>
+                            <constraint firstItem="dqj-Ng-uXz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UkN-J3-QTC"/>
+                            <constraint firstAttribute="bottom" secondItem="dqj-Ng-uXz" secondAttribute="bottom" id="VzB-dO-rO2"/>
+                            <constraint firstItem="jNq-ES-7LD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wzj-fa-uMB"/>
+                            <constraint firstItem="jNq-ES-7LD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZNl-nm-neL"/>
+                            <constraint firstItem="dqj-Ng-uXz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eb7-66-Bdt"/>
+                            <constraint firstAttribute="trailing" secondItem="dqj-Ng-uXz" secondAttribute="trailing" id="hQ0-tR-L3f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jNq-ES-7LD" secondAttribute="bottom" id="r1I-oW-QHO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102.89855072463769" y="79.6875"/>
+        </scene>
+        <!--Timer Controller-->
+        <scene sceneID="KNi-KB-IJr">
+            <objects>
+                <viewController id="wj7-FX-fY1" customClass="TimerController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nq3-xQ-fQH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TimerState" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-UT-otF">
+                                <rect key="frame" x="186" y="47" width="84" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pFK-nP-6ep"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gfP-eD-Nvg"/>
+                    <connections>
+                        <outlet property="timerState" destination="zF0-UT-otF" id="FKh-Zo-RbM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kiu-7n-tcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923" y="80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="270" height="480"/>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
