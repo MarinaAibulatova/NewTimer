@@ -9,11 +9,15 @@ import Foundation
 import UIKit
 
 class TimerCrossfit: ObservableObject {
-    var time: String = "00:00:00"
-    var currentRound: Int = 0
-    var currentState: String = "work"
+   @Published var time: String = "00:00:00"
+    @Published var currentRound: Int = 0
+    @Published var currentState: String = "work"
     
-    var timeSec: Int = 0
+    var timeSec: Int = 0 {
+        didSet {
+            print("\(timeSec)")
+        }
+    }
     
     var timer = Timer()
     
@@ -49,16 +53,48 @@ class TimerCrossfit: ObservableObject {
                 //sound start
             }
             //показать таймер
-            currentState = "work"
+            time = showTimer(time: timeCurrentRound)
+            currentState = "Work"
         }else {
             if (timeCurrentRound - workTimeInt) == 0 {
                 //sound start
             }
             //показать таймер
-            currentState = "rest"
+            time = showTimer(time: timeCurrentRound - workTimeInt)
+            currentState = "Rest"
         }
         
         timeSec += 1
        
+    }
+    
+    func showTimer(time: Int) -> String {
+        let hours, minutes, seconds: Int
+        var timeString: [String] = ["00", "00", "00"]
+        
+        hours   = time / 3600
+        minutes = time / 60 % 60
+        seconds = time % 60
+        
+        if hours > 0 {
+            timeString[0] = hours < 10 ? ("0\(hours)"): ("\(hours)")
+        }
+        if minutes > 0 {
+            timeString[1] = minutes < 10 ? ("0\(minutes)") : ("\(minutes)")
+        }
+        if seconds > 0 {
+            timeString[2] = seconds < 10 ? ("0\(seconds)") : ("\(seconds)")
+        }
+        
+        return timeString.joined(separator: ":")
+    }
+    
+    func resetTimer() {
+        time            = "00:00:00"
+        currentRound    = 0
+        timeSec         = 0
+        currentState    = ""
+        timer.invalidate()
+        //sound stop
     }
 }

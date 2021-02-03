@@ -100,8 +100,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V49-Dm-eBj" userLabel="TimerStateView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-UT-otF" userLabel="TimerState">
-                                                <rect key="frame" x="187.33333333333334" y="79.333333333333329" width="39.666666666666657" height="20.333333333333329"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-UT-otF" userLabel="TimerState">
+                                                <rect key="frame" x="207" y="89.666666666666671" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -184,16 +184,19 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6Ag-E6-87B">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urg-s7-lLz">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urg-s7-lLz" userLabel="startTimer">
                                                         <rect key="frame" x="0.0" y="0.0" width="124.66666666666667" height="179"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" image="play.circle.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="startTimer:" destination="wj7-FX-fY1" eventType="touchUpInside" id="zWd-Ze-G2h"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-Op-peY">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-Op-peY" userLabel="pauseTimer">
                                                         <rect key="frame" x="144.66666666666666" y="0.0" width="124.66666666666666" height="179"/>
                                                         <state key="normal" image="pause.circle.fill" catalog="system"/>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7N-e6-1Vi">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7N-e6-1Vi" userLabel="stopTimer">
                                                         <rect key="frame" x="289.33333333333331" y="0.0" width="124.66666666666669" height="179"/>
                                                         <state key="normal" image="stop.circle.fill" catalog="system"/>
                                                     </button>
@@ -226,6 +229,7 @@
                     <navigationItem key="navigationItem" id="gfP-eD-Nvg"/>
                     <connections>
                         <outlet property="timerState" destination="zF0-UT-otF" id="FKh-Zo-RbM"/>
+                        <outlet property="timerTime" destination="An6-IW-OP0" id="cvI-SW-teL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiu-7n-tcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
