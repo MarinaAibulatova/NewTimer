@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 class TimerCrossfit: ObservableObject {
-   @Published var time: String = "00:00:00"
+    @Published var time: String = "00:00:00"
     @Published var currentRound: Int = 0
-    @Published var currentState: String = "work"
+    @Published var currentState: String = "..."
     
     var timeSec: Int = 0 {
         didSet {
@@ -65,7 +65,6 @@ class TimerCrossfit: ObservableObject {
         }
         
         timeSec += 1
-       
     }
     
     func showTimer(time: Int) -> String {
@@ -93,7 +92,7 @@ class TimerCrossfit: ObservableObject {
         time            = "00:00:00"
         currentRound    = 0
         timeSec         = 0
-        currentState    = ""
+        currentState    = "..."
         timer.invalidate()
         //sound stop
     }

@@ -29,7 +29,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="46"/>
                                                 <color key="backgroundColor" systemColor="placeholderTextColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                <color key="tintColor" red="0.9801899790763855" green="0.18934255838394165" blue="0.032248783856630325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.99421117285498428" green="1" blue="0.96588706412956016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Timer"/>
                                                 <connections>
                                                     <segue destination="wj7-FX-fY1" kind="show" id="zG1-bU-Obo"/>
@@ -39,21 +39,21 @@
                                                 <rect key="frame" x="0.0" y="86" width="157" height="46"/>
                                                 <color key="backgroundColor" systemColor="placeholderTextColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                <color key="tintColor" red="0.9801899790763855" green="0.18934255838394165" blue="0.032248783856630325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.99421117285498428" green="1" blue="0.96588706412956016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Emom timer"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9n-gM-S1t" userLabel="MyExercises">
                                                 <rect key="frame" x="0.0" y="172" width="157" height="46"/>
                                                 <color key="backgroundColor" systemColor="placeholderTextColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                <color key="tintColor" red="0.9801899790763855" green="0.18934255838394165" blue="0.032248783856630325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.99421117285498428" green="1" blue="0.96588706412956016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="My exercises"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bh8-N0-FDD" userLabel="About">
                                                 <rect key="frame" x="0.0" y="258" width="157" height="46"/>
                                                 <color key="backgroundColor" systemColor="placeholderTextColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                <color key="tintColor" red="0.9801899790763855" green="0.18934255838394165" blue="0.032248783856630325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.99421117285498428" green="1" blue="0.96588706412956016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="About"/>
                                             </button>
                                         </subviews>
@@ -195,10 +195,16 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-Op-peY" userLabel="pauseTimer">
                                                         <rect key="frame" x="144.66666666666666" y="0.0" width="124.66666666666666" height="179"/>
                                                         <state key="normal" image="pause.circle.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="pauseTimer:" destination="wj7-FX-fY1" eventType="touchUpInside" id="1hY-tY-SAS"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7N-e6-1Vi" userLabel="stopTimer">
                                                         <rect key="frame" x="289.33333333333331" y="0.0" width="124.66666666666669" height="179"/>
                                                         <state key="normal" image="stop.circle.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="stopTimer:" destination="wj7-FX-fY1" eventType="touchUpInside" id="hc7-rP-TsA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -228,8 +234,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="gfP-eD-Nvg"/>
                     <connections>
+                        <outlet property="restTimeText" destination="H7k-4z-16c" id="Kx1-oH-h9z"/>
+                        <outlet property="roundsCountText" destination="zkZ-8a-3UG" id="r2Q-Dd-aag"/>
+                        <outlet property="timerRounds" destination="WXs-fs-ehi" id="8mq-xf-cCc"/>
                         <outlet property="timerState" destination="zF0-UT-otF" id="FKh-Zo-RbM"/>
                         <outlet property="timerTime" destination="An6-IW-OP0" id="cvI-SW-teL"/>
+                        <outlet property="workTimeText" destination="TtX-17-Y49" id="OHW-DT-V5N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiu-7n-tcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
