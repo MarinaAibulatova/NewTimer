@@ -47,23 +47,24 @@ class TimerCrossfit: ObservableObject {
         if currentRound > roundsCountInt {
             //sound stop
             //time stop
-        }
-        if timeCurrentRound < workTimeInt {
-            if timeCurrentRound == 0 {
-                //sound start
+            resetTimer()
+        } else {
+            if timeCurrentRound < workTimeInt {
+                if timeCurrentRound == 0 {
+                    //sound start
+                }
+                //показать таймер
+                time = showTimer(time: timeCurrentRound)
+                currentState = "Work"
+            }else {
+                if (timeCurrentRound - workTimeInt) == 0 {
+                    //sound start
+                }
+                //показать таймер
+                time = showTimer(time: timeCurrentRound - workTimeInt)
+                currentState = "Rest"
             }
-            //показать таймер
-            time = showTimer(time: timeCurrentRound)
-            currentState = "Work"
-        }else {
-            if (timeCurrentRound - workTimeInt) == 0 {
-                //sound start
-            }
-            //показать таймер
-            time = showTimer(time: timeCurrentRound - workTimeInt)
-            currentState = "Rest"
         }
-        
         timeSec += 1
     }
     

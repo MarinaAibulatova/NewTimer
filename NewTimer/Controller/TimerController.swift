@@ -39,13 +39,12 @@ class TimerController: UIViewController {
     }
     
     @IBAction func pauseTimer(_ sender: UIButton) {
+        timer.pause()
     }
     
     
     @IBAction func stopTimer(_ sender: UIButton) {
-       // timerState.text = "..."
         timer.resetTimer()
-        
     }
    
     func updateLabel(){
@@ -59,26 +58,36 @@ class TimerController: UIViewController {
         if let workTime = workTimeText.text {
             if workTime.isEmpty {
                 fieldIsEmpty = true
-                showAlert(field: "Work")
+                showAlertEmptyField(field: workTimeText.restorationIdentifier!)
+            }
+            if Int(workTime) ?? 0 > 60 {
+                showAlertLimit(field: workTimeText.restorationIdentifier!)
             }
         }
         if let restTime = restTimeText.text {
             if restTime.isEmpty {
                 fieldIsEmpty = true
-                showAlert(field: "Rest")
+                showAlertEmptyField(field: restTimeText.restorationIdentifier!)
             }
         }
         if let roundsCount = roundsCountText.text {
             if roundsCount.isEmpty {
                 fieldIsEmpty = true
-                showAlert(field: "Rounds")
+                showAlertEmptyField(field: roundsCountText.restorationIdentifier!)
             }
         }
         return fieldIsEmpty
     }
     
-    func showAlert(field: String){
-        let alert = UIAlertController(title: "\(field) time is empty", message: "Please, fill the field", preferredStyle: .alert)
+    func showAlertEmptyField(field: String){
+        let alert = UIAlertController(title: "\(field) is empty", message: "Please, fill the field", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertLimit(field: String){
+        let alert = UIAlertController(title: "\(field) time can't be more 60", message: "Please, enter new value", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
@@ -95,4 +104,19 @@ extension TimerController: UITextFieldDelegate {
         }
         return true
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text {
+            if let restorationIdentifier = textField.restorationIdentifier {
+                if restorationIdentifier.hasPrefix(Constans.work) {
+                    restTimeText.text = String(60 - (text as NSString).integerValue)
+                }else if restorationIdentifier.hasPrefix(Constans.work) {
+                    workTimeText.text = String(60 - (text as NSString).integerValue)
+                }
+            }
+            
+        }
+    }
 }
+
+

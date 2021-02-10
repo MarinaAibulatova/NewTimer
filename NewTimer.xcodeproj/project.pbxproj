@@ -13,6 +13,7 @@
 		9C2DA1FA25BFF8F800ABD582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DA1F825BFF8F800ABD582 /* Main.storyboard */; };
 		9C2DA1FC25BFF8FA00ABD582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DA1FB25BFF8FA00ABD582 /* Assets.xcassets */; };
 		9C2DA1FF25BFF8FA00ABD582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DA1FD25BFF8FA00ABD582 /* LaunchScreen.storyboard */; };
+		9C62137E25D3F9D900BC670F /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62137D25D3F9D900BC670F /* Constans.swift */; };
 		9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF7725C1BCA6004974A0 /* TimerController.swift */; };
 		9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF8025C83F54004974A0 /* Timer.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		9C2DA1FB25BFF8FA00ABD582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C2DA1FE25BFF8FA00ABD582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C2DA20025BFF8FA00ABD582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C62137D25D3F9D900BC670F /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		9CAAFF7725C1BCA6004974A0 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		9CAAFF8025C83F54004974A0 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				9CAAFF8025C83F54004974A0 /* Timer.swift */,
+				9C62137D25D3F9D900BC670F /* Constans.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				9C2DA1F725BFF8F800ABD582 /* MenuController.swift in Sources */,
 				9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */,
+				9C62137E25D3F9D900BC670F /* Constans.swift in Sources */,
 				9C2DA1F325BFF8F800ABD582 /* AppDelegate.swift in Sources */,
 				9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */,
 				9C2DA1F525BFF8F800ABD582 /* SceneDelegate.swift in Sources */,
