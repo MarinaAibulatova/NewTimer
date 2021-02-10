@@ -14,37 +14,12 @@ class TimerCrossfit: ObservableObject {
     @Published var currentRound: Int = 0
     @Published var currentState: String = "..."
     
-    var playerStartRound    = AVAudioPlayer()
-    var playerStopRound     = AVAudioPlayer()
+    var playerStartRound    = Player(sound: "startRound")
+    var playerStopRound     = Player(sound: "stopTimer")
     
     var timeSec: Int = 0
     
     var timer = Timer()
-    
-    func playSound(player: String) {
-        //sound file
-        if player == "start" {
-            let soundStartRound = Bundle.main.path(forResource: "startRound", ofType: "mp3")
-            do {
-                playerStartRound = try AVAudioPlayer(contentsOf:
-                    URL(fileURLWithPath: soundStartRound!))
-            }
-            catch {
-                print(error)
-            }
-            playerStartRound.play()
-        }else {
-            let soundStopRound = Bundle.main.path(forResource: "stopTimer", ofType: "mp3")
-            do {
-                playerStopRound = try AVAudioPlayer(contentsOf:
-                    URL(fileURLWithPath: soundStopRound!))
-            }
-            catch {
-                print(error)
-            }
-            playerStopRound.play()
-        }
-    }
     
     func start(workTime: String, restTime: String, roundsCount: String) {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block:
@@ -69,14 +44,14 @@ class TimerCrossfit: ObservableObject {
         
         if currentRound > roundsCountInt {
             //sound stop
-            playSound(player: "stop")
+            playerStopRound.playSound()
             //time stop
             resetTimer()
         } else {
             if timeCurrentRound < workTimeInt {
                 if timeCurrentRound == 0 {
                     //sound start
-                    playSound(player: "start")
+                    playerStartRound.playSound()
                 }
                 //показать таймер
                 time = showTimer(time: timeCurrentRound)
@@ -84,7 +59,7 @@ class TimerCrossfit: ObservableObject {
             }else {
                 if (timeCurrentRound - workTimeInt) == 0 {
                     //sound start
-                    playSound(player: "start")
+                    playerStartRound.playSound()
                 }
                 //показать таймер
                 time = showTimer(time: timeCurrentRound - workTimeInt)
@@ -122,6 +97,6 @@ class TimerCrossfit: ObservableObject {
         currentState    = "..."
         timer.invalidate()
         //sound stop
-        playSound(player: "stop")
+        playerStopRound.playSound()
     }
 }
