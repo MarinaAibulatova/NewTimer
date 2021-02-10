@@ -14,6 +14,8 @@
 		9C2DA1FC25BFF8FA00ABD582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DA1FB25BFF8FA00ABD582 /* Assets.xcassets */; };
 		9C2DA1FF25BFF8FA00ABD582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DA1FD25BFF8FA00ABD582 /* LaunchScreen.storyboard */; };
 		9C62137E25D3F9D900BC670F /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62137D25D3F9D900BC670F /* Constans.swift */; };
+		9C62138225D3FBF800BC670F /* stopTimer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C62138125D3FBF800BC670F /* stopTimer.mp3 */; };
+		9C62138525D3FC0400BC670F /* startRound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C62138425D3FC0400BC670F /* startRound.mp3 */; };
 		9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF7725C1BCA6004974A0 /* TimerController.swift */; };
 		9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF8025C83F54004974A0 /* Timer.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 		9C2DA1FE25BFF8FA00ABD582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C2DA20025BFF8FA00ABD582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C62137D25D3F9D900BC670F /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		9C62138125D3FBF800BC670F /* stopTimer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stopTimer.mp3; sourceTree = "<group>"; };
+		9C62138425D3FC0400BC670F /* startRound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startRound.mp3; sourceTree = "<group>"; };
 		9CAAFF7725C1BCA6004974A0 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		9CAAFF8025C83F54004974A0 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +66,7 @@
 		9C2DA1F125BFF8F800ABD582 /* NewTimer */ = {
 			isa = PBXGroup;
 			children = (
+				9C62138025D3FBE300BC670F /* Audio */,
 				9CAAFF7F25C7EAE5004974A0 /* Controller */,
 				9CAAFF7E25C7EADF004974A0 /* View */,
 				9CAAFF7D25C7EAD7004974A0 /* Model */,
@@ -72,6 +77,15 @@
 				9C2DA20025BFF8FA00ABD582 /* Info.plist */,
 			);
 			path = NewTimer;
+			sourceTree = "<group>";
+		};
+		9C62138025D3FBE300BC670F /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				9C62138125D3FBF800BC670F /* stopTimer.mp3 */,
+				9C62138425D3FC0400BC670F /* startRound.mp3 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		9CAAFF7D25C7EAD7004974A0 /* Model */ = {
@@ -159,6 +173,8 @@
 			files = (
 				9C2DA1FF25BFF8FA00ABD582 /* LaunchScreen.storyboard in Resources */,
 				9C2DA1FC25BFF8FA00ABD582 /* Assets.xcassets in Resources */,
+				9C62138525D3FC0400BC670F /* startRound.mp3 in Resources */,
+				9C62138225D3FBF800BC670F /* stopTimer.mp3 in Resources */,
 				9C2DA1FA25BFF8F800ABD582 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -61,6 +61,7 @@ class TimerController: UIViewController {
                 showAlertEmptyField(field: workTimeText.restorationIdentifier!)
             }
             if Int(workTime) ?? 0 > 60 {
+                fieldIsEmpty = true
                 showAlertLimit(field: workTimeText.restorationIdentifier!)
             }
         }
@@ -68,6 +69,10 @@ class TimerController: UIViewController {
             if restTime.isEmpty {
                 fieldIsEmpty = true
                 showAlertEmptyField(field: restTimeText.restorationIdentifier!)
+            }
+            if Int(restTime) ?? 0 > 60 {
+                fieldIsEmpty = true
+                showAlertLimit(field: restTimeText.restorationIdentifier!)
             }
         }
         if let roundsCount = roundsCountText.text {
