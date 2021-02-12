@@ -55,7 +55,7 @@ class TimerCrossfit: ObservableObject {
                 }
                 //показать таймер
                 time = showTimer(time: timeCurrentRound)
-                currentState = "Work"
+                currentState = Constans.work
             }else {
                 if (timeCurrentRound - workTimeInt) == 0 {
                     //sound start
@@ -63,7 +63,7 @@ class TimerCrossfit: ObservableObject {
                 }
                 //показать таймер
                 time = showTimer(time: timeCurrentRound - workTimeInt)
-                currentState = "Rest"
+                currentState = Constans.rest
             }
         }
         timeSec += 1

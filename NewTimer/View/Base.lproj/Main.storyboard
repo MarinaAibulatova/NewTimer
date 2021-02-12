@@ -3,6 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="dqj-Ng-uXz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgound2" translatesAutoresizingMaskIntoConstraints="NO" id="dqj-Ng-uXz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNq-ES-7LD">
@@ -27,34 +28,42 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qn-KR-Rn9">
                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="46"/>
-                                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                                <color key="backgroundColor" name="colorButton"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="tintColor" red="0.99421117285498428" green="1" blue="0.96588706412956016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Timer"/>
+                                                <state key="normal" title="Timer">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="wj7-FX-fY1" kind="show" id="zG1-bU-Obo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6G-7l-zKf" userLabel="EmomTimer">
                                                 <rect key="frame" x="0.0" y="86" width="157" height="46"/>
-                                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                                <color key="backgroundColor" name="colorButton"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="tintColor" red="0.99421117285498428" green="1" blue="0.96588706412956016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Emom timer"/>
+                                                <state key="normal" title="Emom timer">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9n-gM-S1t" userLabel="MyExercises">
                                                 <rect key="frame" x="0.0" y="172" width="157" height="46"/>
-                                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                                <color key="backgroundColor" name="colorButton"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="tintColor" red="0.99421117285498428" green="1" blue="0.96588706412956016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="My exercises"/>
+                                                <state key="normal" title="My exercises">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bh8-N0-FDD" userLabel="About">
                                                 <rect key="frame" x="0.0" y="258" width="157" height="46"/>
-                                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                                <color key="backgroundColor" name="colorButton"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="tintColor" red="0.99421117285498428" green="1" blue="0.96588706412956016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="About"/>
+                                                <state key="normal" title="About">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -78,6 +87,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jNq-ES-7LD" secondAttribute="bottom" id="r1I-oW-QHO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="aboutButton" destination="Bh8-N0-FDD" id="dAN-jW-awA"/>
+                        <outlet property="emomButton" destination="y6G-7l-zKf" id="GjA-wA-zo1"/>
+                        <outlet property="exercisesButton" destination="e9n-gM-S1t" id="OOO-Mr-yUi"/>
+                        <outlet property="timerButton" destination="3qn-KR-Rn9" id="VgI-D4-tTq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,7 +106,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="oCA-ao-l4o">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgound2" translatesAutoresizingMaskIntoConstraints="NO" id="oCA-ao-l4o">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1ZS-QC-Xh0" userLabel="MainStackMenu">
@@ -100,10 +115,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V49-Dm-eBj" userLabel="TimerStateView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-UT-otF" userLabel="TimerState">
-                                                <rect key="frame" x="207" y="89.666666666666671" width="0.0" height="0.0"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-UT-otF" userLabel="TimerState">
+                                                <rect key="frame" x="185" y="53.666666666666664" width="44.333333333333343" height="71.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                <color key="textColor" name="colorButton"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -116,9 +131,9 @@
                                         <rect key="frame" x="0.0" y="179" width="414" height="179"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="An6-IW-OP0" userLabel="Time">
-                                                <rect key="frame" x="171.66666666666666" y="79.333333333333314" width="71" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="73.333333333333343" y="53.666666666666664" width="267.33333333333326" height="71.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                <color key="textColor" name="colorButton"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -138,17 +153,20 @@
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="work" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="work" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TtX-17-Y49" userLabel="WorkTime">
                                                                 <rect key="frame" x="0.0" y="0.0" width="199" height="41"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="backgroundColor" name="colorButton"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="rest" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="rest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H7k-4z-16c" userLabel="RestTime">
                                                                 <rect key="frame" x="0.0" y="61" width="199" height="41"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="backgroundColor" name="colorButton"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="rounds" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="rounds" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zkZ-8a-3UG" userLabel="CountRounds">
                                                                 <rect key="frame" x="0.0" y="122" width="199" height="41"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="backgroundColor" name="colorButton"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -158,8 +176,8 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXs-fs-ehi" userLabel="CurrentRound">
                                                                 <rect key="frame" x="0.0" y="0.0" width="199" height="163"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                                <color key="textColor" name="colorButton"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -186,14 +204,18 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urg-s7-lLz" userLabel="startTimer">
                                                         <rect key="frame" x="0.0" y="0.0" width="124.66666666666667" height="179"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <state key="normal" image="play.circle.fill" catalog="system"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="tintColor" name="colorButton"/>
+                                                        <state key="normal" image="play.circle.fill" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="startTimer:" destination="wj7-FX-fY1" eventType="touchUpInside" id="zWd-Ze-G2h"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-Op-peY" userLabel="pauseTimer">
                                                         <rect key="frame" x="144.66666666666666" y="0.0" width="124.66666666666666" height="179"/>
+                                                        <color key="tintColor" red="0.94509803920000002" green="0.76470588240000004" blue="0.058823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" image="pause.circle.fill" catalog="system"/>
                                                         <connections>
                                                             <action selector="pauseTimer:" destination="wj7-FX-fY1" eventType="touchUpInside" id="1hY-tY-SAS"/>
@@ -201,9 +223,11 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7N-e6-1Vi" userLabel="stopTimer">
                                                         <rect key="frame" x="289.33333333333331" y="0.0" width="124.66666666666669" height="179"/>
+                                                        <color key="tintColor" red="0.94509803920000002" green="0.76470588240000004" blue="0.058823529409999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" image="stop.circle.fill" catalog="system"/>
                                                         <connections>
                                                             <action selector="stopTimer:" destination="wj7-FX-fY1" eventType="touchUpInside" id="hc7-rP-TsA"/>
+                                                            <action selector="stopTimerButton:" destination="wj7-FX-fY1" eventType="touchUpInside" id="Oue-6e-p3H"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -234,8 +258,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="gfP-eD-Nvg"/>
                     <connections>
+                        <outlet property="pauseTimerButton" destination="kYM-Op-peY" id="XH3-AA-OQF"/>
                         <outlet property="restTimeText" destination="H7k-4z-16c" id="Kx1-oH-h9z"/>
                         <outlet property="roundsCountText" destination="zkZ-8a-3UG" id="r2Q-Dd-aag"/>
+                        <outlet property="startTimerButton" destination="urg-s7-lLz" id="b09-ae-9jg"/>
+                        <outlet property="stopTimerButton" destination="q7N-e6-1Vi" id="OK6-V4-PjP"/>
                         <outlet property="timerRounds" destination="WXs-fs-ehi" id="8mq-xf-cCc"/>
                         <outlet property="timerState" destination="zF0-UT-otF" id="FKh-Zo-RbM"/>
                         <outlet property="timerTime" destination="An6-IW-OP0" id="cvI-SW-teL"/>
@@ -248,13 +275,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="270" height="480"/>
+        <image name="backgound2" width="56" height="100"/>
         <image name="pause.circle.fill" catalog="system" width="128" height="121"/>
         <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <image name="stop.circle.fill" catalog="system" width="128" height="121"/>
-        <systemColor name="placeholderTextColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="colorButton">
+            <color red="0.94509803921568625" green="0.7686274509803922" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

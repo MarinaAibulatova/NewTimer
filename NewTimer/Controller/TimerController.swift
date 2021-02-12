@@ -16,6 +16,15 @@ class TimerController: UIViewController {
         
         result =  timer.objectWillChange.sink {self.updateLabel()}
         
+        startTimerButton.imageView?.contentMode = .scaleAspectFit
+        startTimerButton.imageEdgeInsets = UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
+        
+        pauseTimerButton.imageView?.contentMode = .scaleAspectFit
+        pauseTimerButton.imageEdgeInsets = UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
+        
+        stopTimerButton.imageView?.contentMode = .scaleAspectFit
+        stopTimerButton.imageEdgeInsets = UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
+        
         workTimeText.delegate = self
         restTimeText.delegate = self
         roundsCountText.delegate = self
@@ -30,6 +39,10 @@ class TimerController: UIViewController {
     @IBOutlet weak var workTimeText: UITextField!
     @IBOutlet weak var restTimeText: UITextField!
     @IBOutlet weak var roundsCountText: UITextField!
+    
+    @IBOutlet weak var startTimerButton: UIButton!
+    @IBOutlet weak var pauseTimerButton: UIButton!
+    @IBOutlet weak var stopTimerButton: UIButton!
     
     @IBAction func startTimer(_ sender: UIButton) {
         
@@ -115,7 +128,7 @@ extension TimerController: UITextFieldDelegate {
             if let restorationIdentifier = textField.restorationIdentifier {
                 if restorationIdentifier.hasPrefix(Constans.work) {
                     restTimeText.text = String(60 - (text as NSString).integerValue)
-                }else if restorationIdentifier.hasPrefix(Constans.work) {
+                }else if restorationIdentifier.hasPrefix(Constans.rest) {
                     workTimeText.text = String(60 - (text as NSString).integerValue)
                 }
             }
