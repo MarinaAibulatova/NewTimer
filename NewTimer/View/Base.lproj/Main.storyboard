@@ -41,6 +41,9 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="tintColor" red="0.9801899790763855" green="0.18934255838394165" blue="0.032248783856630325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Emom timer"/>
+                                                <connections>
+                                                    <segue destination="Rko-JI-ErJ" kind="show" id="hFv-vS-LyH"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9n-gM-S1t" userLabel="MyExercises">
                                                 <rect key="frame" x="0.0" y="172" width="157" height="46"/>
@@ -230,7 +233,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiu-7n-tcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921.73913043478262" y="79.891304347826093"/>
+            <point key="canvasLocation" x="861" y="-328"/>
+        </scene>
+        <!--Emom Controller-->
+        <scene sceneID="I6b-ax-Gn1">
+            <objects>
+                <viewController id="Rko-JI-ErJ" customClass="EmomController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TGi-zz-Uyt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="9im-lr-PfS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="INg-xR-1q9">
+                                <rect key="frame" x="20" y="0.0" width="374" height="716"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOb-Qt-sU6" userLabel="EmomStateView">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="179"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-tP-Rtv" userLabel="EmomState">
+                                                <rect key="frame" x="166" y="79" width="77" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wL9-fs-QGI" userLabel="TimeView">
+                                        <rect key="frame" x="0.0" y="179" width="374" height="179"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1d-j6-ktu" userLabel="ButtonsView">
+                                        <rect key="frame" x="0.0" y="358" width="374" height="179"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEP-ax-2uj" userLabel="ExerciseView">
+                                        <rect key="frame" x="0.0" y="537" width="374" height="179"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yhK-el-W41"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="INg-xR-1q9" firstAttribute="leading" secondItem="TGi-zz-Uyt" secondAttribute="leadingMargin" id="01H-9a-BxS"/>
+                            <constraint firstItem="9im-lr-PfS" firstAttribute="bottom" secondItem="yhK-el-W41" secondAttribute="bottom" id="0bM-fh-ALy"/>
+                            <constraint firstItem="9im-lr-PfS" firstAttribute="leading" secondItem="yhK-el-W41" secondAttribute="leading" id="ERe-dQ-R5g"/>
+                            <constraint firstItem="INg-xR-1q9" firstAttribute="top" secondItem="TGi-zz-Uyt" secondAttribute="topMargin" id="HP6-bv-YDZ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="INg-xR-1q9" secondAttribute="bottom" id="Md9-33-evo"/>
+                            <constraint firstItem="9im-lr-PfS" firstAttribute="top" secondItem="yhK-el-W41" secondAttribute="top" id="eb8-WL-h3F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="INg-xR-1q9" secondAttribute="trailing" id="iuQ-nR-cF8"/>
+                            <constraint firstItem="9im-lr-PfS" firstAttribute="trailing" secondItem="yhK-el-W41" secondAttribute="trailing" id="umJ-m4-iEc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7hB-od-ons"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tGp-yu-Wr3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860.86956521739137" y="503.804347826087"/>
         </scene>
     </scenes>
     <resources>
