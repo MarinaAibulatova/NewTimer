@@ -39,11 +39,6 @@
                                                 <rect key="frame" x="0.0" y="86" width="157" height="46"/>
                                                 <color key="backgroundColor" systemColor="placeholderTextColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                <color key="tintColor" red="0.9801899790763855" green="0.18934255838394165" blue="0.032248783856630325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Emom timer"/>
-                                                <connections>
-                                                    <segue destination="Rko-JI-ErJ" kind="show" id="hFv-vS-LyH"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9n-gM-S1t" userLabel="MyExercises">
                                                 <rect key="frame" x="0.0" y="172" width="157" height="46"/>
