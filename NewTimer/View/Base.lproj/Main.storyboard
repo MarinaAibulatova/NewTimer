@@ -252,17 +252,32 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOb-Qt-sU6" userLabel="EmomStateView">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="179"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-tP-Rtv" userLabel="EmomState">
-                                                <rect key="frame" x="166" y="79" width="77" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-tP-Rtv" userLabel="EmomState">
+                                                <rect key="frame" x="148.66666666666666" y="71.666666666666671" width="76.666666666666657" height="36"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="0Mf-tP-Rtv" firstAttribute="centerY" secondItem="hOb-Qt-sU6" secondAttribute="centerY" id="nEv-b8-Iv4"/>
+                                            <constraint firstItem="0Mf-tP-Rtv" firstAttribute="centerX" secondItem="hOb-Qt-sU6" secondAttribute="centerX" id="oov-7X-DHB"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wL9-fs-QGI" userLabel="TimeView">
                                         <rect key="frame" x="0.0" y="179" width="374" height="179"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PV3-7F-PXy" userLabel="Time">
+                                                <rect key="frame" x="166.33333333333334" y="79.333333333333314" width="41.333333333333343" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="PV3-7F-PXy" firstAttribute="centerX" secondItem="wL9-fs-QGI" secondAttribute="centerX" id="iiu-Tr-de3"/>
+                                            <constraint firstItem="PV3-7F-PXy" firstAttribute="centerY" secondItem="wL9-fs-QGI" secondAttribute="centerY" id="wlF-hy-Cu2"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1d-j6-ktu" userLabel="ButtonsView">
                                         <rect key="frame" x="0.0" y="358" width="374" height="179"/>
