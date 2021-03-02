@@ -171,7 +171,6 @@
 				9C2DA1F725BFF8F800ABD582 /* MenuController.swift in Sources */,
 				9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */,
 				9C2DA1F325BFF8F800ABD582 /* AppDelegate.swift in Sources */,
-				9C654D3825E53FB30073FBE6 /* EmomController.swift in Sources */,
 				9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */,
 				9C2DA1F525BFF8F800ABD582 /* SceneDelegate.swift in Sources */,
 			);
