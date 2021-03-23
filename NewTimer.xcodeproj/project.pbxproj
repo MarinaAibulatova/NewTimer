@@ -17,6 +17,10 @@
 		9C62138225D3FBF800BC670F /* stopTimer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C62138125D3FBF800BC670F /* stopTimer.mp3 */; };
 		9C62138525D3FC0400BC670F /* startRound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C62138425D3FC0400BC670F /* startRound.mp3 */; };
 		9C62138825D40B8D00BC670F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62138725D40B8D00BC670F /* Player.swift */; };
+		9C6BECED260268B200DB6EA0 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6BECEC260268B200DB6EA0 /* ExerciseViewController.swift */; };
+		9C77773025FF309700FE37CB /* ChecklistItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C77772F25FF309700FE37CB /* ChecklistItems.swift */; };
+		9C983AF725F0D7CF00D6AC78 /* EmomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C983AF625F0D7CF00D6AC78 /* EmomController.swift */; };
+		9C983AFA25F0E2A300D6AC78 /* TableExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C983AF925F0E2A300D6AC78 /* TableExercisesViewController.swift */; };
 		9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF7725C1BCA6004974A0 /* TimerController.swift */; };
 		9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF8025C83F54004974A0 /* Timer.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +38,10 @@
 		9C62138125D3FBF800BC670F /* stopTimer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stopTimer.mp3; sourceTree = "<group>"; };
 		9C62138425D3FC0400BC670F /* startRound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startRound.mp3; sourceTree = "<group>"; };
 		9C62138725D40B8D00BC670F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		9C6BECEC260268B200DB6EA0 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		9C77772F25FF309700FE37CB /* ChecklistItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItems.swift; sourceTree = "<group>"; };
+		9C983AF625F0D7CF00D6AC78 /* EmomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmomController.swift; sourceTree = "<group>"; };
+		9C983AF925F0E2A300D6AC78 /* TableExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableExercisesViewController.swift; sourceTree = "<group>"; };
 		9CAAFF7725C1BCA6004974A0 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		9CAAFF8025C83F54004974A0 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +104,7 @@
 				9CAAFF8025C83F54004974A0 /* Timer.swift */,
 				9C62137D25D3F9D900BC670F /* Constans.swift */,
 				9C62138725D40B8D00BC670F /* Player.swift */,
+				9C77772F25FF309700FE37CB /* ChecklistItems.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,6 +122,9 @@
 			children = (
 				9C2DA1F625BFF8F800ABD582 /* MenuController.swift */,
 				9CAAFF7725C1BCA6004974A0 /* TimerController.swift */,
+				9C983AF625F0D7CF00D6AC78 /* EmomController.swift */,
+				9C983AF925F0E2A300D6AC78 /* TableExercisesViewController.swift */,
+				9C6BECEC260268B200DB6EA0 /* ExerciseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,10 +202,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C2DA1F725BFF8F800ABD582 /* MenuController.swift in Sources */,
+				9C983AF725F0D7CF00D6AC78 /* EmomController.swift in Sources */,
+				9C6BECED260268B200DB6EA0 /* ExerciseViewController.swift in Sources */,
 				9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */,
+				9C983AFA25F0E2A300D6AC78 /* TableExercisesViewController.swift in Sources */,
 				9C62137E25D3F9D900BC670F /* Constans.swift in Sources */,
 				9C2DA1F325BFF8F800ABD582 /* AppDelegate.swift in Sources */,
 				9C62138825D40B8D00BC670F /* Player.swift in Sources */,
+				9C77773025FF309700FE37CB /* ChecklistItems.swift in Sources */,
 				9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */,
 				9C2DA1F525BFF8F800ABD582 /* SceneDelegate.swift in Sources */,
 			);
