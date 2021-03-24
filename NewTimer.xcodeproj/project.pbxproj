@@ -23,6 +23,9 @@
 		9C983AFA25F0E2A300D6AC78 /* TableExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C983AF925F0E2A300D6AC78 /* TableExercisesViewController.swift */; };
 		9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF7725C1BCA6004974A0 /* TimerController.swift */; };
 		9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF8025C83F54004974A0 /* Timer.swift */; };
+		9CDF5B8F2609D3A700AB16A7 /* MyComplexesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B8E2609D3A700AB16A7 /* MyComplexesViewController.swift */; };
+		9CDF5B922609D65900AB16A7 /* AddComplexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B912609D65900AB16A7 /* AddComplexViewController.swift */; };
+		9CDF5B95260B211800AB16A7 /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B94260B211800AB16A7 /* Complex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		9C983AF925F0E2A300D6AC78 /* TableExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableExercisesViewController.swift; sourceTree = "<group>"; };
 		9CAAFF7725C1BCA6004974A0 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		9CAAFF8025C83F54004974A0 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		9CDF5B8E2609D3A700AB16A7 /* MyComplexesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyComplexesViewController.swift; sourceTree = "<group>"; };
+		9CDF5B912609D65900AB16A7 /* AddComplexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddComplexViewController.swift; sourceTree = "<group>"; };
+		9CDF5B94260B211800AB16A7 /* Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 				9C62137D25D3F9D900BC670F /* Constans.swift */,
 				9C62138725D40B8D00BC670F /* Player.swift */,
 				9C77772F25FF309700FE37CB /* ChecklistItems.swift */,
+				9CDF5B94260B211800AB16A7 /* Complex.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +132,8 @@
 				9C983AF625F0D7CF00D6AC78 /* EmomController.swift */,
 				9C983AF925F0E2A300D6AC78 /* TableExercisesViewController.swift */,
 				9C6BECEC260268B200DB6EA0 /* ExerciseViewController.swift */,
+				9CDF5B8E2609D3A700AB16A7 /* MyComplexesViewController.swift */,
+				9CDF5B912609D65900AB16A7 /* AddComplexViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,11 +216,14 @@
 				9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */,
 				9C983AFA25F0E2A300D6AC78 /* TableExercisesViewController.swift in Sources */,
 				9C62137E25D3F9D900BC670F /* Constans.swift in Sources */,
+				9CDF5B922609D65900AB16A7 /* AddComplexViewController.swift in Sources */,
 				9C2DA1F325BFF8F800ABD582 /* AppDelegate.swift in Sources */,
 				9C62138825D40B8D00BC670F /* Player.swift in Sources */,
 				9C77773025FF309700FE37CB /* ChecklistItems.swift in Sources */,
+				9CDF5B95260B211800AB16A7 /* Complex.swift in Sources */,
 				9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */,
 				9C2DA1F525BFF8F800ABD582 /* SceneDelegate.swift in Sources */,
+				9CDF5B8F2609D3A700AB16A7 /* MyComplexesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
