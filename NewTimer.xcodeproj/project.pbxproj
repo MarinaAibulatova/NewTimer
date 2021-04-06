@@ -23,9 +23,15 @@
 		9C983AFA25F0E2A300D6AC78 /* TableExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C983AF925F0E2A300D6AC78 /* TableExercisesViewController.swift */; };
 		9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF7725C1BCA6004974A0 /* TimerController.swift */; };
 		9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF8025C83F54004974A0 /* Timer.swift */; };
-		9CDF5B8F2609D3A700AB16A7 /* MyComplexesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B8E2609D3A700AB16A7 /* MyComplexesViewController.swift */; };
-		9CDF5B922609D65900AB16A7 /* AddComplexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B912609D65900AB16A7 /* AddComplexViewController.swift */; };
-		9CDF5B95260B211800AB16A7 /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B94260B211800AB16A7 /* Complex.swift */; };
+		9CDF5B8F2609D3A700AB16A7 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B8E2609D3A700AB16A7 /* ExercisesViewController.swift */; };
+		9CDF5B922609D65900AB16A7 /* AddExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B912609D65900AB16A7 /* AddExerciseViewController.swift */; };
+		9CDF5B95260B211800AB16A7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B94260B211800AB16A7 /* Exercise.swift */; };
+		9CDF5B9C2615B9E300AB16A7 /* AllListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B9B2615B9E300AB16A7 /* AllListViewController.swift */; };
+		9CDF5B9F2615CA1300AB16A7 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B9E2615CA1300AB16A7 /* Checklist.swift */; };
+		9CDF5BA2261B29F500AB16A7 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5BA1261B29F500AB16A7 /* ListDetailViewController.swift */; };
+		9CDF5BA7261B4FA900AB16A7 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5BA6261B4FA900AB16A7 /* Workout.swift */; };
+		9CDF5BAA261B503200AB16A7 /* WorkoutsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5BA9261B503200AB16A7 /* WorkoutsListViewController.swift */; };
+		9CDF5BAD261B549300AB16A7 /* WorkoutsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5BAC261B549300AB16A7 /* WorkoutsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,9 +53,15 @@
 		9C983AF925F0E2A300D6AC78 /* TableExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableExercisesViewController.swift; sourceTree = "<group>"; };
 		9CAAFF7725C1BCA6004974A0 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		9CAAFF8025C83F54004974A0 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		9CDF5B8E2609D3A700AB16A7 /* MyComplexesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyComplexesViewController.swift; sourceTree = "<group>"; };
-		9CDF5B912609D65900AB16A7 /* AddComplexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddComplexViewController.swift; sourceTree = "<group>"; };
-		9CDF5B94260B211800AB16A7 /* Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complex.swift; sourceTree = "<group>"; };
+		9CDF5B8E2609D3A700AB16A7 /* ExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
+		9CDF5B912609D65900AB16A7 /* AddExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewController.swift; sourceTree = "<group>"; };
+		9CDF5B94260B211800AB16A7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		9CDF5B9B2615B9E300AB16A7 /* AllListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListViewController.swift; sourceTree = "<group>"; };
+		9CDF5B9E2615CA1300AB16A7 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
+		9CDF5BA1261B29F500AB16A7 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
+		9CDF5BA6261B4FA900AB16A7 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		9CDF5BA9261B503200AB16A7 /* WorkoutsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListViewController.swift; sourceTree = "<group>"; };
+		9CDF5BAC261B549300AB16A7 /* WorkoutsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +119,12 @@
 		9CAAFF7D25C7EAD7004974A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9CDF5BA4261B4EEC00AB16A7 /* from book */,
 				9CAAFF8025C83F54004974A0 /* Timer.swift */,
 				9C62137D25D3F9D900BC670F /* Constans.swift */,
 				9C62138725D40B8D00BC670F /* Player.swift */,
-				9C77772F25FF309700FE37CB /* ChecklistItems.swift */,
-				9CDF5B94260B211800AB16A7 /* Complex.swift */,
+				9CDF5B94260B211800AB16A7 /* Exercise.swift */,
+				9CDF5BA6261B4FA900AB16A7 /* Workout.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,15 +140,36 @@
 		9CAAFF7F25C7EAE5004974A0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9CDF5B97260B6B4E00AB16A7 /* from book */,
 				9C2DA1F625BFF8F800ABD582 /* MenuController.swift */,
 				9CAAFF7725C1BCA6004974A0 /* TimerController.swift */,
 				9C983AF625F0D7CF00D6AC78 /* EmomController.swift */,
-				9C983AF925F0E2A300D6AC78 /* TableExercisesViewController.swift */,
-				9C6BECEC260268B200DB6EA0 /* ExerciseViewController.swift */,
-				9CDF5B8E2609D3A700AB16A7 /* MyComplexesViewController.swift */,
-				9CDF5B912609D65900AB16A7 /* AddComplexViewController.swift */,
+				9CDF5B8E2609D3A700AB16A7 /* ExercisesViewController.swift */,
+				9CDF5B912609D65900AB16A7 /* AddExerciseViewController.swift */,
+				9CDF5BA9261B503200AB16A7 /* WorkoutsListViewController.swift */,
+				9CDF5BAC261B549300AB16A7 /* WorkoutsDetailViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9CDF5B97260B6B4E00AB16A7 /* from book */ = {
+			isa = PBXGroup;
+			children = (
+				9C983AF925F0E2A300D6AC78 /* TableExercisesViewController.swift */,
+				9C6BECEC260268B200DB6EA0 /* ExerciseViewController.swift */,
+				9CDF5B9B2615B9E300AB16A7 /* AllListViewController.swift */,
+				9CDF5BA1261B29F500AB16A7 /* ListDetailViewController.swift */,
+			);
+			path = "from book";
+			sourceTree = "<group>";
+		};
+		9CDF5BA4261B4EEC00AB16A7 /* from book */ = {
+			isa = PBXGroup;
+			children = (
+				9C77772F25FF309700FE37CB /* ChecklistItems.swift */,
+				9CDF5B9E2615CA1300AB16A7 /* Checklist.swift */,
+			);
+			path = "from book";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,16 +248,22 @@
 				9C983AF725F0D7CF00D6AC78 /* EmomController.swift in Sources */,
 				9C6BECED260268B200DB6EA0 /* ExerciseViewController.swift in Sources */,
 				9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */,
+				9CDF5B9F2615CA1300AB16A7 /* Checklist.swift in Sources */,
+				9CDF5BAD261B549300AB16A7 /* WorkoutsDetailViewController.swift in Sources */,
+				9CDF5BA7261B4FA900AB16A7 /* Workout.swift in Sources */,
 				9C983AFA25F0E2A300D6AC78 /* TableExercisesViewController.swift in Sources */,
 				9C62137E25D3F9D900BC670F /* Constans.swift in Sources */,
-				9CDF5B922609D65900AB16A7 /* AddComplexViewController.swift in Sources */,
+				9CDF5B922609D65900AB16A7 /* AddExerciseViewController.swift in Sources */,
+				9CDF5BAA261B503200AB16A7 /* WorkoutsListViewController.swift in Sources */,
 				9C2DA1F325BFF8F800ABD582 /* AppDelegate.swift in Sources */,
 				9C62138825D40B8D00BC670F /* Player.swift in Sources */,
 				9C77773025FF309700FE37CB /* ChecklistItems.swift in Sources */,
-				9CDF5B95260B211800AB16A7 /* Complex.swift in Sources */,
+				9CDF5B95260B211800AB16A7 /* Exercise.swift in Sources */,
+				9CDF5BA2261B29F500AB16A7 /* ListDetailViewController.swift in Sources */,
 				9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */,
+				9CDF5B9C2615B9E300AB16A7 /* AllListViewController.swift in Sources */,
 				9C2DA1F525BFF8F800ABD582 /* SceneDelegate.swift in Sources */,
-				9CDF5B8F2609D3A700AB16A7 /* MyComplexesViewController.swift in Sources */,
+				9CDF5B8F2609D3A700AB16A7 /* ExercisesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

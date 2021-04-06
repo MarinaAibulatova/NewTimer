@@ -8,43 +8,67 @@
 import Foundation
 import UIKit
 
-class TableExercisesViewController: UITableViewController, ExerciseViewControllerDelegate {
+class TableExercisesViewController: UITableViewController, ItemDetailViewControllerDelegate {
 
     
-    var row0Item = ChecklistItems()
-    var row1Item = ChecklistItems()
-    var row2Item = ChecklistItems()
+//    var row0Item = ChecklistItems()
+//    var row1Item = ChecklistItems()
+//    var row2Item = ChecklistItems()
     
     var items = [ChecklistItems]()
-    
+    var checklist: Checklist!
     override func viewDidLoad() {
         super.viewDidLoad()
         let row0Item = ChecklistItems()
         row0Item.text = "walk"
         
         items.append(row0Item)
+        navigationItem.largeTitleDisplayMode = .never
         
-        let row1Item = ChecklistItems()
-        row1Item.text = "eat"
+        loadItems()
+        title = checklist.name
         
-        items.append(row1Item)
-        
-        let row2Item = ChecklistItems()
-        row2Item.text = "sleep"
-        
-        items.append(row2Item)
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
+        print("doc folder \(documetDirectory())")
+        print("file path \(dataFilePath())")
         
     }
+    //MARK: - Safe/Load data
+    func documetDirectory() -> URL {
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return path[0]
+    }
 
+    func saveItems() {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(items)
+            try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
+            
+        } catch {
+            print(error)
+        }
+    }
+    func loadItems() {
+        let path = dataFilePath()
+        if let data = try? Data(contentsOf: path) {
+            let decoder = PropertyListDecoder()
+            do {
+                items = try decoder.decode([ChecklistItems].self, from: data)
+            }catch {
+                print(error)
+            }
+        }
+    }
+    func dataFilePath() -> URL {
+        return documetDirectory().appendingPathComponent("List.plist")
+    }
     //MARK: - Exercise Delegates
     
-    func addExerciseViewControllerDidCancel(_ controller: ExersiceViewController) {
+    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController) {
         navigationController?.popViewController(animated: true)
     }
     
-    func addExerciseViewController(_ controller: ExersiceViewController, didFinishing item: ChecklistItems) {
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishing item: ChecklistItems) {
         let newRowIndex = items.count
         items.append(item)
         
@@ -52,13 +76,35 @@ class TableExercisesViewController: UITableViewController, ExerciseViewControlle
         let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .automatic)
         
+        saveItems()
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItems) {
+        if let index = items.firstIndex(of: item) {
+            let indexPath = IndexPath(row: index, section: 0)
+            if let cell = tableView.cellForRow(at: indexPath) {
+                configureText(for: cell, with: item)
+            }
+        }
+        saveItems()
         navigationController?.popViewController(animated: true)
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddItem" {
-            let controller = segue.destination as! ExersiceViewController
+            let controller = segue.destination as! ItemDetailViewController
             controller.delegate = self
+        }else if segue.identifier == "EditItem" {
+            let controller = segue.destination as! ItemDetailViewController
+            controller.delegate = self
+            
+            if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
+                print(indexPath)
+                print(indexPath.row)
+                controller.itemToEdit = items[indexPath.row]
+            }
         }
     }
     
@@ -77,17 +123,19 @@ class TableExercisesViewController: UITableViewController, ExerciseViewControlle
         configureCheckmark(for: cell, with: item)
         return cell
     }
-    
+
     //MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let cell = tableView.cellForRow(at: indexPath) {
+            print(indexPath.row)
             let item = items[indexPath.row]
             item.checked.toggle()
             
             configureCheckmark(for: cell, with: item)
         }
         tableView.deselectRow(at: indexPath, animated: true)
+        saveItems()
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -96,15 +144,19 @@ class TableExercisesViewController: UITableViewController, ExerciseViewControlle
         
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
+        saveItems()
     }
     
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItems) {
        // var isChecked = false
+        let label = cell.viewWithTag(1001) as! UILabel
         
         if item.checked {
-            cell.accessoryType = .checkmark
+            //cell.accessoryType = .checkmark
+            label.text = "√"
         }else {
-            cell.accessoryType = .none
+            //cell.accessoryType = .none
+            label.text = ""
         }
     }
     

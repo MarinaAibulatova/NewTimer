@@ -8,11 +8,16 @@
 import Foundation
 import UIKit
 
-class ExersiceViewController: UITableViewController, UITextFieldDelegate {
+class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
         
+        if let item = itemToEdit {
+            title = "Edit"
+            complex.text = item.text
+            doneBarButton.isEnabled = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -20,7 +25,8 @@ class ExersiceViewController: UITableViewController, UITextFieldDelegate {
         complex.becomeFirstResponder()
     }
     
-    weak var delegate: ExerciseViewControllerDelegate?
+    weak var delegate: ItemDetailViewControllerDelegate?
+    var itemToEdit: ChecklistItems?
     
     @IBOutlet weak var complex: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
@@ -53,19 +59,25 @@ class ExersiceViewController: UITableViewController, UITextFieldDelegate {
     //MARK: - Actions
 
     @IBAction func cancel(_ sender: Any) {
-        delegate?.addExerciseViewControllerDidCancel(self)
+        delegate?.itemDetailViewControllerDidCancel(self)
         //navigationController?.popViewController(animated: true)
     }
     
     
     @IBAction func done(_ sender: Any) {
-        let item = ChecklistItems()
-        item.text = complex.text!
-        delegate?.addExerciseViewController(self, didFinishing: item)
+        if let item = itemToEdit {
+            item.text = complex.text!
+            delegate?.itemDetailViewController(self, didFinishEditing: item)
+        } else {
+            let item = ChecklistItems()
+            item.text = complex.text!
+            delegate?.itemDetailViewController(self, didFinishing: item)
+        }
        // navigationController?.popViewController(animated: true)
     }
 }
-protocol ExerciseViewControllerDelegate: class {
-    func addExerciseViewControllerDidCancel(_ controller: ExersiceViewController)
-    func addExerciseViewController(_ controller: ExersiceViewController, didFinishing item: ChecklistItems)
+protocol ItemDetailViewControllerDelegate: class {
+    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishing item: ChecklistItems)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItems)
 }
