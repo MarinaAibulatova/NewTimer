@@ -58,6 +58,9 @@
                                                 <state key="normal" title="My exercises">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="YOQ-09-KuE" kind="show" id="QgC-04-wrg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bh8-N0-FDD" userLabel="About">
                                                 <rect key="frame" x="0.0" y="258" width="157" height="46"/>
@@ -268,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiu-7n-tcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-454" y="-510"/>
+            <point key="canvasLocation" x="-455" y="-690"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7mM-kL-RR6">
@@ -324,39 +327,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="complexes" id="0l9-Nh-lW2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="exercises" id="0l9-Nh-lW2">
                                 <rect key="frame" x="0.0" y="28" width="414" height="36.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0l9-Nh-lW2" id="k06-eZ-FSW">
                                     <rect key="frame" x="0.0" y="0.0" width="370" height="36.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VPV-36-gam">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuA-rr-v4N">
                                             <rect key="frame" x="0.0" y="0.0" width="370" height="36.333333333333336"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riB-cH-mxL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="36.333333333333336"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="n47-Nd-pAX"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuA-rr-v4N">
-                                                    <rect key="frame" x="20" y="0.0" width="350" height="36.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="VPV-36-gam" firstAttribute="top" secondItem="k06-eZ-FSW" secondAttribute="top" id="4S6-D1-jXM"/>
-                                        <constraint firstAttribute="trailing" secondItem="VPV-36-gam" secondAttribute="trailing" id="Eey-qu-sSi"/>
-                                        <constraint firstAttribute="bottom" secondItem="VPV-36-gam" secondAttribute="bottom" id="sUR-Pj-iTP"/>
-                                        <constraint firstItem="VPV-36-gam" firstAttribute="leading" secondItem="k06-eZ-FSW" secondAttribute="leading" id="zQw-BV-n92"/>
+                                        <constraint firstItem="JuA-rr-v4N" firstAttribute="leading" secondItem="k06-eZ-FSW" secondAttribute="leading" id="BUC-5U-XjD"/>
+                                        <constraint firstItem="JuA-rr-v4N" firstAttribute="top" secondItem="k06-eZ-FSW" secondAttribute="top" id="EyQ-24-JnQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="JuA-rr-v4N" secondAttribute="trailing" id="LAF-wQ-9JE"/>
+                                        <constraint firstAttribute="bottom" secondItem="JuA-rr-v4N" secondAttribute="bottom" id="iqn-rp-b87"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -372,7 +361,7 @@
                     <navigationItem key="navigationItem" title="My exercises" largeTitleDisplayMode="always" id="RfQ-Wv-UuU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hDE-vD-wWu">
                             <connections>
-                                <segue destination="aef-27-a8X" kind="show" identifier="AddСomplex" id="3aM-lY-8A0"/>
+                                <segue destination="aef-27-a8X" kind="show" identifier="AddExercise" id="3aM-lY-8A0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -399,7 +388,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="34.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name of complex" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9lU-Ep-wLO">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of exercise" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9lU-Ep-wLO">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -446,6 +435,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1b-aK-rgl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2222" y="515"/>
+        </scene>
+        <!--Exercises Controller-->
+        <scene sceneID="0kh-1z-zJF">
+            <objects>
+                <viewController id="YOQ-09-KuE" customClass="ExercisesController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bkM-ES-7wP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dc0-gV-tlR">
+                                <rect key="frame" x="145" y="315" width="126" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="colorButton"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Show exercise">
+                                    <color key="titleColor" name="colorBackground"/>
+                                </state>
+                                <connections>
+                                    <action selector="showExercises:" destination="YOQ-09-KuE" eventType="touchUpInside" id="wh7-dn-NSP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jpj-DL-wrK"/>
+                        <color key="backgroundColor" name="colorBackground"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PLE-QM-hR0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hi8-pt-PfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-455" y="783"/>
         </scene>
         <!--Emom Controller-->
         <scene sceneID="rxb-ZC-C1O">
@@ -495,32 +514,25 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="238.66666666666666"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tD-7T-gYg" userLabel="Play">
-                                                        <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="238.66666666666666"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="238.66666666666666"/>
                                                         <color key="tintColor" name="colorButton"/>
                                                         <state key="normal" image="play.circle.fill" catalog="system"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJe-EH-axs" userLabel="Pause">
-                                                        <rect key="frame" x="82.666666666666671" y="0.0" width="83.000000000000014" height="238.66666666666666"/>
+                                                        <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="238.66666666666666"/>
                                                         <color key="tintColor" name="colorButton"/>
                                                         <state key="normal" image="pause.circle.fill" catalog="system"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3j-bb-YOq" userLabel="Stop">
-                                                        <rect key="frame" x="165.66666666666666" y="0.0" width="82.666666666666657" height="238.66666666666666"/>
+                                                        <rect key="frame" x="206.99999999999997" y="0.0" width="103.66666666666666" height="238.66666666666666"/>
                                                         <color key="tintColor" name="colorButton"/>
                                                         <state key="normal" image="stop.circle.fill" catalog="system"/>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tS5-Mg-CdZ">
-                                                        <rect key="frame" x="248.33333333333337" y="0.0" width="83" height="238.66666666666666"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <segue destination="KOK-gC-zAV" kind="show" id="SMr-RU-irC"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAO-tw-gVB" userLabel="Choose">
-                                                        <rect key="frame" x="331.33333333333331" y="0.0" width="82.666666666666686" height="238.66666666666666"/>
+                                                        <rect key="frame" x="310.66666666666669" y="0.0" width="103.33333333333331" height="238.66666666666666"/>
                                                         <state key="normal" title="Choose"/>
                                                         <connections>
-                                                            <segue destination="8n3-9T-kCQ" kind="show" id="W77-qj-psp"/>
+                                                            <segue destination="8n3-9T-kCQ" kind="show" identifier="ChooseWorkout" id="W77-qj-psp"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -546,10 +558,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1HW-AK-Mg2"/>
+                    <connections>
+                        <outlet property="timerState" destination="njw-FA-QVl" id="bZx-zP-HYa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lE-Jb-BhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455.07246376811599" y="179.34782608695653"/>
+            <point key="canvasLocation" x="-455" y="-24"/>
         </scene>
         <!--Add workout-->
         <scene sceneID="ddC-Rw-YWC">
@@ -621,7 +636,7 @@
             <objects>
                 <tableViewController id="jZI-MU-d0e" customClass="TableExercisesViewController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Dt-Pd-DCB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -680,14 +695,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wph-nQ-OMD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1383" y="1146"/>
+            <point key="canvasLocation" x="2109" y="1379"/>
         </scene>
         <!--Add Checklist-->
         <scene sceneID="e6U-UX-QYM">
             <objects>
                 <tableViewController storyboardIdentifier="ListDetailViewController" id="YXZ-V8-BeS" customClass="ListDetailViewController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="iys-fK-UU1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -745,14 +760,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ne-Qe-vdd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="1873"/>
+            <point key="canvasLocation" x="1306" y="2105"/>
         </scene>
         <!--Add item-->
         <scene sceneID="LCJ-kt-CCc">
             <objects>
                 <tableViewController id="TWw-KT-OYW" customClass="ItemDetailViewController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="FtW-P3-Vmb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -810,7 +825,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zP-J7-n2M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1383" y="1873"/>
+            <point key="canvasLocation" x="2109" y="2105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LEu-0W-NaJ">
@@ -819,7 +834,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Vmi-2p-Ulp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UeT-Fp-h6d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -829,14 +844,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="id2-lC-C8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178.2608695652174" y="937.50000000000011"/>
+            <point key="canvasLocation" x="529" y="1169"/>
         </scene>
         <!--All Lists-->
         <scene sceneID="7mT-aW-hif">
             <objects>
                 <tableViewController id="tuz-6o-dkL" userLabel="All Lists" customClass="AllListViewController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y80-zu-klQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <connections>
@@ -858,13 +873,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhT-B0-Gxl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="1147"/>
+            <point key="canvasLocation" x="1306" y="1379"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZLC-m1-nHi"/>
         <segue reference="OIw-nb-9oW"/>
-        <segue reference="8KQ-ry-mHR"/>
+        <segue reference="3aM-lY-8A0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backgound2" width="56" height="100"/>

@@ -9,5 +9,4 @@ import Foundation
 
 class Exercise: NSObject, Encodable, Decodable {
     var name: String = ""
-    var checked: Bool = false
 }

@@ -15,7 +15,7 @@ class AddExerciseViewController: UITableViewController, UITextFieldDelegate {
         
         if let newItem = itemToEdit {
             nameOfExercise.text = itemToEdit?.name
-            title = "Edit complex"
+            title = "Edit exercise"
             buttonDone.isEnabled = true
         }
     }
@@ -34,10 +34,6 @@ class AddExerciseViewController: UITableViewController, UITextFieldDelegate {
         let stringRange = Range(range, in: oldText)!
         let newText = oldText.replacingCharacters(in: stringRange, with: string)
         
-        
-        print("old text - \(oldText)")
-        print(stringRange)
-        print("newText - \(newText)")
         buttonDone.isEnabled = !newText.isEmpty
         
         return true

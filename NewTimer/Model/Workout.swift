@@ -7,9 +7,9 @@
 
 import Foundation
 
-class Workout: NSObject {
+class Workout: NSObject, Codable {
     var name: String
-    
+    var exercises = [Exercise]()
     init(nameOfWorkout name: String) {
         self.name = name
     }
