@@ -13,12 +13,24 @@
 		9C2DA1FA25BFF8F800ABD582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DA1F825BFF8F800ABD582 /* Main.storyboard */; };
 		9C2DA1FC25BFF8FA00ABD582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DA1FB25BFF8FA00ABD582 /* Assets.xcassets */; };
 		9C2DA1FF25BFF8FA00ABD582 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DA1FD25BFF8FA00ABD582 /* LaunchScreen.storyboard */; };
+		9C3BDEF826248C0200C9F614 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BDEF726248C0200C9F614 /* DataModel.swift */; };
+		9C3BDEFB262DF63000C9F614 /* ExercisesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BDEFA262DF63000C9F614 /* ExercisesController.swift */; };
+		9C3BDEFE262DF7DE00C9F614 /* ExerciseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BDEFD262DF7DE00C9F614 /* ExerciseManager.swift */; };
+		9C3BDF01262EB23000C9F614 /* ExerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BDF00262EB23000C9F614 /* ExerciseData.swift */; };
+		9C3BDF08262F56B800C9F614 /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BDF07262F56B800C9F614 /* TODO.swift */; };
 		9C62137E25D3F9D900BC670F /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62137D25D3F9D900BC670F /* Constans.swift */; };
 		9C62138225D3FBF800BC670F /* stopTimer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C62138125D3FBF800BC670F /* stopTimer.mp3 */; };
 		9C62138525D3FC0400BC670F /* startRound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C62138425D3FC0400BC670F /* startRound.mp3 */; };
 		9C62138825D40B8D00BC670F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62138725D40B8D00BC670F /* Player.swift */; };
+		9C983AF725F0D7CF00D6AC78 /* EmomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C983AF625F0D7CF00D6AC78 /* EmomController.swift */; };
 		9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF7725C1BCA6004974A0 /* TimerController.swift */; };
 		9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAAFF8025C83F54004974A0 /* Timer.swift */; };
+		9CDF5B8F2609D3A700AB16A7 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B8E2609D3A700AB16A7 /* ExercisesViewController.swift */; };
+		9CDF5B922609D65900AB16A7 /* AddExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B912609D65900AB16A7 /* AddExerciseViewController.swift */; };
+		9CDF5B95260B211800AB16A7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5B94260B211800AB16A7 /* Exercise.swift */; };
+		9CDF5BA7261B4FA900AB16A7 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5BA6261B4FA900AB16A7 /* Workout.swift */; };
+		9CDF5BAA261B503200AB16A7 /* WorkoutsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5BA9261B503200AB16A7 /* WorkoutsListViewController.swift */; };
+		9CDF5BAD261B549300AB16A7 /* WorkoutsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF5BAC261B549300AB16A7 /* WorkoutsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +42,24 @@
 		9C2DA1FB25BFF8FA00ABD582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C2DA1FE25BFF8FA00ABD582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C2DA20025BFF8FA00ABD582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C3BDEF726248C0200C9F614 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		9C3BDEFA262DF63000C9F614 /* ExercisesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesController.swift; sourceTree = "<group>"; };
+		9C3BDEFD262DF7DE00C9F614 /* ExerciseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseManager.swift; sourceTree = "<group>"; };
+		9C3BDF00262EB23000C9F614 /* ExerciseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseData.swift; sourceTree = "<group>"; };
+		9C3BDF07262F56B800C9F614 /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
 		9C62137D25D3F9D900BC670F /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		9C62138125D3FBF800BC670F /* stopTimer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stopTimer.mp3; sourceTree = "<group>"; };
 		9C62138425D3FC0400BC670F /* startRound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startRound.mp3; sourceTree = "<group>"; };
 		9C62138725D40B8D00BC670F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		9C983AF625F0D7CF00D6AC78 /* EmomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmomController.swift; sourceTree = "<group>"; };
 		9CAAFF7725C1BCA6004974A0 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		9CAAFF8025C83F54004974A0 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		9CDF5B8E2609D3A700AB16A7 /* ExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesViewController.swift; sourceTree = "<group>"; };
+		9CDF5B912609D65900AB16A7 /* AddExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewController.swift; sourceTree = "<group>"; };
+		9CDF5B94260B211800AB16A7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		9CDF5BA6261B4FA900AB16A7 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		9CDF5BA9261B503200AB16A7 /* WorkoutsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListViewController.swift; sourceTree = "<group>"; };
+		9CDF5BAC261B549300AB16A7 /* WorkoutsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +92,7 @@
 		9C2DA1F125BFF8F800ABD582 /* NewTimer */ = {
 			isa = PBXGroup;
 			children = (
+				9C3BDF06262F56A400C9F614 /* TODO */,
 				9C62138025D3FBE300BC670F /* Audio */,
 				9CAAFF7F25C7EAE5004974A0 /* Controller */,
 				9CAAFF7E25C7EADF004974A0 /* View */,
@@ -79,6 +104,25 @@
 				9C2DA20025BFF8FA00ABD582 /* Info.plist */,
 			);
 			path = NewTimer;
+			sourceTree = "<group>";
+		};
+		9C3BDEF4262050DA00C9F614 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				9CDF5BA9261B503200AB16A7 /* WorkoutsListViewController.swift */,
+				9CDF5BAC261B549300AB16A7 /* WorkoutsDetailViewController.swift */,
+				9CDF5B8E2609D3A700AB16A7 /* ExercisesViewController.swift */,
+				9CDF5B912609D65900AB16A7 /* AddExerciseViewController.swift */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
+		9C3BDF06262F56A400C9F614 /* TODO */ = {
+			isa = PBXGroup;
+			children = (
+				9C3BDF07262F56B800C9F614 /* TODO.swift */,
+			);
+			path = TODO;
 			sourceTree = "<group>";
 		};
 		9C62138025D3FBE300BC670F /* Audio */ = {
@@ -96,6 +140,11 @@
 				9CAAFF8025C83F54004974A0 /* Timer.swift */,
 				9C62137D25D3F9D900BC670F /* Constans.swift */,
 				9C62138725D40B8D00BC670F /* Player.swift */,
+				9CDF5BA6261B4FA900AB16A7 /* Workout.swift */,
+				9C3BDEF726248C0200C9F614 /* DataModel.swift */,
+				9CDF5B94260B211800AB16A7 /* Exercise.swift */,
+				9C3BDF00262EB23000C9F614 /* ExerciseData.swift */,
+				9C3BDEFD262DF7DE00C9F614 /* ExerciseManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,8 +160,11 @@
 		9CAAFF7F25C7EAE5004974A0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9C3BDEF4262050DA00C9F614 /* Lists */,
 				9C2DA1F625BFF8F800ABD582 /* MenuController.swift */,
+				9C3BDEFA262DF63000C9F614 /* ExercisesController.swift */,
 				9CAAFF7725C1BCA6004974A0 /* TimerController.swift */,
+				9C983AF625F0D7CF00D6AC78 /* EmomController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,12 +242,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C2DA1F725BFF8F800ABD582 /* MenuController.swift in Sources */,
+				9C3BDEFB262DF63000C9F614 /* ExercisesController.swift in Sources */,
+				9C983AF725F0D7CF00D6AC78 /* EmomController.swift in Sources */,
+				9C3BDEFE262DF7DE00C9F614 /* ExerciseManager.swift in Sources */,
+				9C3BDF01262EB23000C9F614 /* ExerciseData.swift in Sources */,
 				9CAAFF7825C1BCA6004974A0 /* TimerController.swift in Sources */,
+				9CDF5BAD261B549300AB16A7 /* WorkoutsDetailViewController.swift in Sources */,
+				9CDF5BA7261B4FA900AB16A7 /* Workout.swift in Sources */,
 				9C62137E25D3F9D900BC670F /* Constans.swift in Sources */,
+				9CDF5B922609D65900AB16A7 /* AddExerciseViewController.swift in Sources */,
+				9CDF5BAA261B503200AB16A7 /* WorkoutsListViewController.swift in Sources */,
 				9C2DA1F325BFF8F800ABD582 /* AppDelegate.swift in Sources */,
 				9C62138825D40B8D00BC670F /* Player.swift in Sources */,
+				9C3BDEF826248C0200C9F614 /* DataModel.swift in Sources */,
+				9C3BDF08262F56B800C9F614 /* TODO.swift in Sources */,
+				9CDF5B95260B211800AB16A7 /* Exercise.swift in Sources */,
 				9CAAFF8125C83F54004974A0 /* Timer.swift in Sources */,
 				9C2DA1F525BFF8F800ABD582 /* SceneDelegate.swift in Sources */,
+				9CDF5B8F2609D3A700AB16A7 /* ExercisesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,4 +13,5 @@ struct Constans {
     static let rest: String = "rest"
     static let colorButton = UIColor(red: 241, green: 196, blue: 15, alpha: 1)
     static let radiusButton: CGFloat = 10
+    static let dataPath: String = "Workouts.plist"
 }
