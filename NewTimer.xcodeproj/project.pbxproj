@@ -18,6 +18,9 @@
 		9C3BDEFE262DF7DE00C9F614 /* ExerciseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BDEFD262DF7DE00C9F614 /* ExerciseManager.swift */; };
 		9C3BDF01262EB23000C9F614 /* ExerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BDF00262EB23000C9F614 /* ExerciseData.swift */; };
 		9C3BDF08262F56B800C9F614 /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BDF07262F56B800C9F614 /* TODO.swift */; };
+		9C3BDF102630554000C9F614 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BDF0F2630554000C9F614 /* AuthViewController.swift */; };
+		9C4D3FC826316331007A153F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D3FC726316331007A153F /* AuthManager.swift */; };
+		9C4D3FCC2636FE91007A153F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D3FCB2636FE91007A153F /* DesignableView.swift */; };
 		9C62137E25D3F9D900BC670F /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62137D25D3F9D900BC670F /* Constans.swift */; };
 		9C62138225D3FBF800BC670F /* stopTimer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C62138125D3FBF800BC670F /* stopTimer.mp3 */; };
 		9C62138525D3FC0400BC670F /* startRound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C62138425D3FC0400BC670F /* startRound.mp3 */; };
@@ -47,6 +50,9 @@
 		9C3BDEFD262DF7DE00C9F614 /* ExerciseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseManager.swift; sourceTree = "<group>"; };
 		9C3BDF00262EB23000C9F614 /* ExerciseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseData.swift; sourceTree = "<group>"; };
 		9C3BDF07262F56B800C9F614 /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
+		9C3BDF0F2630554000C9F614 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		9C4D3FC726316331007A153F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		9C4D3FCB2636FE91007A153F /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		9C62137D25D3F9D900BC670F /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		9C62138125D3FBF800BC670F /* stopTimer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stopTimer.mp3; sourceTree = "<group>"; };
 		9C62138425D3FC0400BC670F /* startRound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startRound.mp3; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 				9CDF5B94260B211800AB16A7 /* Exercise.swift */,
 				9C3BDF00262EB23000C9F614 /* ExerciseData.swift */,
 				9C3BDEFD262DF7DE00C9F614 /* ExerciseManager.swift */,
+				9C4D3FC726316331007A153F /* AuthManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +172,8 @@
 				9C3BDEFA262DF63000C9F614 /* ExercisesController.swift */,
 				9CAAFF7725C1BCA6004974A0 /* TimerController.swift */,
 				9C983AF625F0D7CF00D6AC78 /* EmomController.swift */,
+				9C3BDF0F2630554000C9F614 /* AuthViewController.swift */,
+				9C4D3FCB2636FE91007A153F /* DesignableView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -242,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C2DA1F725BFF8F800ABD582 /* MenuController.swift in Sources */,
+				9C4D3FC826316331007A153F /* AuthManager.swift in Sources */,
 				9C3BDEFB262DF63000C9F614 /* ExercisesController.swift in Sources */,
 				9C983AF725F0D7CF00D6AC78 /* EmomController.swift in Sources */,
 				9C3BDEFE262DF7DE00C9F614 /* ExerciseManager.swift in Sources */,
@@ -253,6 +263,8 @@
 				9CDF5B922609D65900AB16A7 /* AddExerciseViewController.swift in Sources */,
 				9CDF5BAA261B503200AB16A7 /* WorkoutsListViewController.swift in Sources */,
 				9C2DA1F325BFF8F800ABD582 /* AppDelegate.swift in Sources */,
+				9C3BDF102630554000C9F614 /* AuthViewController.swift in Sources */,
+				9C4D3FCC2636FE91007A153F /* DesignableView.swift in Sources */,
 				9C62138825D40B8D00BC670F /* Player.swift in Sources */,
 				9C3BDEF826248C0200C9F614 /* DataModel.swift in Sources */,
 				9C3BDF08262F56B800C9F614 /* TODO.swift in Sources */,
