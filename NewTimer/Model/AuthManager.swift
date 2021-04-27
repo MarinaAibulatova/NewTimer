@@ -8,7 +8,8 @@
 import Foundation
 
 protocol AuthManagerDelegate {
-    func didFailWithError(error: String)
+    func didFailWithError(error: String, from: Int)
+    func didFinishAuth()
 }
 
 struct AuthManager {
@@ -21,6 +22,7 @@ struct AuthManager {
     }()
     
     var delegate: AuthManagerDelegate?
+    var hasMistake: Bool = false
     
      func auth(username: String, password: String) {
         let parameters: [String: Any] = ["username": username, "password": password]
@@ -31,7 +33,7 @@ struct AuthManager {
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         } catch {
-            delegate?.didFailWithError(error: Constans.errorMessage)
+            delegate?.didFailWithError(error: Constans.errorMessage, from: 1)
         }
         
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -39,14 +41,14 @@ struct AuthManager {
         
         let task = session.dataTask(with: request) { (data, response, error) in
             if error != nil {
-                delegate?.didFailWithError(error: Constans.errorMessage)
+                delegate?.didFailWithError(error: Constans.errorMessage, from: 2)
                 return
             }
             
             if let httpsResponse = response as? HTTPURLResponse {
                 if (200...299).contains(httpsResponse.statusCode) {
                     if let safeData = data {
-                        
+                        //delegate?.didFinishAuth()
                     }
                 } else {
                     var errorMessage: String = ""
@@ -56,7 +58,7 @@ struct AuthManager {
                     default:
                         errorMessage = Constans.errorMessage
                     }
-                    delegate?.didFailWithError(error: errorMessage)
+                    delegate?.didFailWithError(error: errorMessage, from: 3)
                 }
             }
         }
