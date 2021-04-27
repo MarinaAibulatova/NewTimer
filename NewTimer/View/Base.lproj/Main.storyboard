@@ -298,7 +298,7 @@
             </objects>
             <point key="canvasLocation" x="-1225" y="-96"/>
         </scene>
-        <!--Timer Controller-->
+        <!--Timer-->
         <scene sceneID="KNi-KB-IJr">
             <objects>
                 <viewController id="wj7-FX-fY1" customClass="TimerController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -449,7 +449,7 @@
                             <constraint firstAttribute="bottom" secondItem="1ZS-QC-Xh0" secondAttribute="bottom" id="zyj-Aq-tGh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gfP-eD-Nvg"/>
+                    <navigationItem key="navigationItem" title="Timer" id="gfP-eD-Nvg"/>
                     <connections>
                         <outlet property="pauseTimerButton" destination="kYM-Op-peY" id="XH3-AA-OQF"/>
                         <outlet property="restTimeText" destination="H7k-4z-16c" id="Kx1-oH-h9z"/>
@@ -629,7 +629,7 @@
             </objects>
             <point key="canvasLocation" x="2222" y="515"/>
         </scene>
-        <!--Exercises Controller-->
+        <!--My workouts-->
         <scene sceneID="0kh-1z-zJF">
             <objects>
                 <viewController id="YOQ-09-KuE" customClass="ExercisesController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -653,13 +653,13 @@
                         <viewLayoutGuide key="safeArea" id="Jpj-DL-wrK"/>
                         <color key="backgroundColor" name="colorBackground"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PLE-QM-hR0"/>
+                    <navigationItem key="navigationItem" title="My workouts" id="PLE-QM-hR0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hi8-pt-PfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-455" y="783"/>
         </scene>
-        <!--Emom Controller-->
+        <!--EMOM Timer-->
         <scene sceneID="rxb-ZC-C1O">
             <objects>
                 <viewController id="CR1-DI-4yM" customClass="EmomController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -750,7 +750,7 @@
                             <constraint firstItem="cgL-NQ-X6s" firstAttribute="bottom" secondItem="rea-kP-0fi" secondAttribute="bottom" id="kJw-M5-KJt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1HW-AK-Mg2"/>
+                    <navigationItem key="navigationItem" title="EMOM Timer" id="1HW-AK-Mg2"/>
                     <connections>
                         <outlet property="timerState" destination="njw-FA-QVl" id="bZx-zP-HYa"/>
                     </connections>
