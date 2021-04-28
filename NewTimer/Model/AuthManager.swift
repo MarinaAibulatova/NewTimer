@@ -48,7 +48,17 @@ struct AuthManager {
             if let httpsResponse = response as? HTTPURLResponse {
                 if (200...299).contains(httpsResponse.statusCode) {
                     if let safeData = data {
-                        //delegate?.didFinishAuth()
+                       let decoder = JSONDecoder()
+                        do{
+                            let token = try decoder.decode(Token.self, from: safeData)
+                            var userDefaults = UserDefaults.standard
+                            userDefaults.set(token.token, forKey: "tokenKey")
+                            
+                            var tokenUser = userDefaults.object(forKey: "tokenKey")
+                            print(token)
+                        } catch {
+                            print(error)
+                        }
                     }
                 } else {
                     var errorMessage: String = ""
