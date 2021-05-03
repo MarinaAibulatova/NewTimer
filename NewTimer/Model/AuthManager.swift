@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AuthManagerDelegate {
-    func didFailWithError(error: String, from: Int)
+    func didFailWithError(error: String)
     func didFinishAuth()
 }
 
@@ -24,6 +24,7 @@ struct AuthManager {
     var delegate: AuthManagerDelegate?
     var hasMistake: Bool = false
     
+    //MARK: - Authorization
      func auth(username: String, password: String) {
         let parameters: [String: Any] = ["username": username, "password": password]
         let urlLogin = URL(string: Constans.urlAuth)!
@@ -33,7 +34,7 @@ struct AuthManager {
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         } catch {
-            delegate?.didFailWithError(error: Constans.errorMessage, from: 1)
+            delegate?.didFailWithError(error: Constans.errorMessage)
         }
         
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -41,7 +42,7 @@ struct AuthManager {
         
         let task = session.dataTask(with: request) { (data, response, error) in
             if error != nil {
-                delegate?.didFailWithError(error: Constans.errorMessage, from: 2)
+                delegate?.didFailWithError(error: Constans.errorMessage)
                 return
             }
             
@@ -51,13 +52,10 @@ struct AuthManager {
                        let decoder = JSONDecoder()
                         do{
                             let token = try decoder.decode(Token.self, from: safeData)
-                            var userDefaults = UserDefaults.standard
+                            let userDefaults = UserDefaults.standard
                             userDefaults.set(token.token, forKey: "tokenKey")
-                            
-                            var tokenUser = userDefaults.object(forKey: "tokenKey")
-                            print(token)
                         } catch {
-                            print(error)
+                            delegate?.didFailWithError(error: Constans.errorMessage)
                         }
                     }
                 } else {
@@ -68,7 +66,7 @@ struct AuthManager {
                     default:
                         errorMessage = Constans.errorMessage
                     }
-                    delegate?.didFailWithError(error: errorMessage, from: 3)
+                    delegate?.didFailWithError(error: errorMessage)
                 }
             }
         }

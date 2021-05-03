@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct WorkoutsList {
+struct WorkoutsList: Codable {
     let count: Int
-    let rezults: [WorkoutsRezult]
+    let results: [WorkoutsResult]
 }
 
-struct WorkoutsRezult {
+struct WorkoutsResult: Codable {
     let id: Int
-    var creationDate: String
+    var creation_date: String
         // подумать над форматом даты
 //        let dateFormatter = ISO8601DateFormatter()
 //        let date = dateFormatter.date(from: self.creationDate)!

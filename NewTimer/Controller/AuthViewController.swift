@@ -86,7 +86,7 @@ class AuthViewController: UIViewController, AuthManagerDelegate, UITextFieldDele
         }
     }
     
-    func didFailWithError(error: String, from: Int) {
+    func didFailWithError(error: String) {
         DispatchQueue.main.async {
             self.errorText.text = error
         }

@@ -21,7 +21,7 @@ struct Constans {
     static let errorMessage = "Oops something went wrong :( Please contact your administrator."
     //MARK: - API components/ Workouts
     static let urlWorkoutsList = "https://wger.de/api/v2/workout/"
-    static let urlWorkout = "https://wger/de/api/v2/workouts/id/canonical_representation/"
+    static let urlWorkout = "https://wger.de/api/v2/workout/id/canonical_representation/"
     
     
 }
