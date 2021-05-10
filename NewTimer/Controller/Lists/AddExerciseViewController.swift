@@ -15,6 +15,10 @@ class AddExerciseViewController: UITableViewController, UITextFieldDelegate {
         
         if let newItem = itemToEdit {
             nameOfExercise.text = itemToEdit?.name
+           // print(descriptionOfExercise.text)
+            repsOfExercise.text = newItem.reps
+            descriptionOfExercise.text = newItem.descriptionOfExercise
+            commentOfExercise.text = newItem.comment
             title = "Edit exercise"
             buttonDone.isEnabled = true
         }
@@ -23,6 +27,10 @@ class AddExerciseViewController: UITableViewController, UITextFieldDelegate {
     //MARK: - Outlets
     @IBOutlet weak var buttonDone: UIBarButtonItem!
     @IBOutlet weak var nameOfExercise: UITextField!
+    @IBOutlet weak var descriptionOfExercise: UITextView!
+    @IBOutlet weak var repsOfExercise: UITextField!
+    @IBOutlet weak var commentOfExercise: UITextField!
+    
     
     weak var delegate: AddExerciseViewControllerDelegate?
     var itemToEdit: Exercise?

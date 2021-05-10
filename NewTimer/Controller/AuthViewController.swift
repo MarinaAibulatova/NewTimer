@@ -29,11 +29,11 @@ class AuthViewController: UIViewController, AuthManagerDelegate, UITextFieldDele
     @IBOutlet weak var signInButton: UIButton!
     
     @IBAction func signInButtonPressed(_ sender: Any) {
-        // let username = "MarinaAibulatova"
-        // let password = "@QUGv%59A#@zx$Cl1e$y"
+         let username = "MarinaAibulatova"
+         let password = "@QUGv%59A#@zx$Cl1e$y"
         
-        let username = loginText.text!
-        let password = passwordText.text!
+       // let username = loginText.text!
+       // let password = passwordText.text!
         errorText.text = ""
         authManager.auth(username: username, password: password)
         
@@ -86,7 +86,7 @@ class AuthViewController: UIViewController, AuthManagerDelegate, UITextFieldDele
         }
     }
     
-    func didFailWithError(error: String, from: Int) {
+    func didFailWithError(error: String) {
         DispatchQueue.main.async {
             self.errorText.text = error
         }

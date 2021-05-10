@@ -251,7 +251,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="YOQ-09-KuE" kind="show" id="QgC-04-wrg"/>
+                                                    <segue destination="8n3-9T-kCQ" kind="show" id="4sg-tC-brc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bh8-N0-FDD" userLabel="About">
@@ -298,7 +298,7 @@
             </objects>
             <point key="canvasLocation" x="-1225" y="-96"/>
         </scene>
-        <!--Timer Controller-->
+        <!--Timer-->
         <scene sceneID="KNi-KB-IJr">
             <objects>
                 <viewController id="wj7-FX-fY1" customClass="TimerController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -449,7 +449,7 @@
                             <constraint firstAttribute="bottom" secondItem="1ZS-QC-Xh0" secondAttribute="bottom" id="zyj-Aq-tGh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gfP-eD-Nvg"/>
+                    <navigationItem key="navigationItem" title="Timer" id="gfP-eD-Nvg"/>
                     <connections>
                         <outlet property="pauseTimerButton" destination="kYM-Op-peY" id="XH3-AA-OQF"/>
                         <outlet property="restTimeText" destination="H7k-4z-16c" id="Kx1-oH-h9z"/>
@@ -464,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiu-7n-tcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455" y="-690"/>
+            <point key="canvasLocation" x="-455" y="-839"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7mM-kL-RR6">
@@ -481,7 +481,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L03-SB-hwb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="-219"/>
+            <point key="canvasLocation" x="-496" y="656"/>
         </scene>
         <!--Workouts-->
         <scene sceneID="Cx3-Jp-wRZ">
@@ -509,7 +509,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsK-Ck-5qG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1307" y="-219"/>
+            <point key="canvasLocation" x="286" y="469"/>
         </scene>
         <!--My exercises-->
         <scene sceneID="A5I-zX-Y3b">
@@ -561,7 +561,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rx-T9-SuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2223" y="-219"/>
+            <point key="canvasLocation" x="1201" y="469"/>
         </scene>
         <!--Add exercise-->
         <scene sceneID="uTw-hg-2pR">
@@ -571,30 +571,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" id="yPq-aP-Zco" userLabel="Description of exercise">
+                            <rect key="frame" x="0.0" y="158" width="414" height="484"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
                         <sections>
                             <tableViewSection id="iVd-2M-GSG">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="o2V-uo-GuF">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="34.333332061767578"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="102" id="o2V-uo-GuF">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o2V-uo-GuF" id="RVU-MP-6LO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="34.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of exercise" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9lU-Ep-wLO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                    <connections>
-                                                        <action selector="done:" destination="aef-27-a8X" eventType="editingDidEndOnExit" id="f4i-1t-4Ko"/>
-                                                    </connections>
-                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7LP-3M-Rjm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of exercise" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9lU-Ep-wLO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                            <connections>
+                                                                <action selector="done:" destination="aef-27-a8X" eventType="editingDidEndOnExit" id="f4i-1t-4Ko"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reps" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKc-1k-CoP" userLabel="Reps">
+                                                            <rect key="frame" x="0.0" y="34" width="414" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IhT-Wc-oXM" userLabel="Comment">
+                                                            <rect key="frame" x="0.0" y="68" width="414" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9lU-Ep-wLO" firstAttribute="leading" secondItem="RVU-MP-6LO" secondAttribute="leading" id="8Rb-rd-CYt"/>
-                                                <constraint firstAttribute="trailing" secondItem="9lU-Ep-wLO" secondAttribute="trailing" id="G75-37-7X2"/>
-                                                <constraint firstAttribute="bottom" secondItem="9lU-Ep-wLO" secondAttribute="bottom" id="TpU-If-pdi"/>
-                                                <constraint firstItem="9lU-Ep-wLO" firstAttribute="top" secondItem="RVU-MP-6LO" secondAttribute="top" id="dyN-dV-yCC"/>
+                                                <constraint firstItem="7LP-3M-Rjm" firstAttribute="leading" secondItem="RVU-MP-6LO" secondAttribute="leading" id="BQv-81-s9d"/>
+                                                <constraint firstAttribute="bottom" secondItem="7LP-3M-Rjm" secondAttribute="bottom" id="UxA-XL-ZXb"/>
+                                                <constraint firstAttribute="trailing" secondItem="7LP-3M-Rjm" secondAttribute="trailing" id="bOz-AT-vuo"/>
+                                                <constraint firstItem="7LP-3M-Rjm" firstAttribute="top" secondItem="RVU-MP-6LO" secondAttribute="top" id="yhN-qz-dkh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -622,14 +645,17 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buttonDone" destination="idO-e6-rth" id="WYR-1K-TrJ"/>
+                        <outlet property="commentOfExercise" destination="IhT-Wc-oXM" id="HzM-rY-dSe"/>
+                        <outlet property="descriptionOfExercise" destination="yPq-aP-Zco" id="AEI-Up-Obd"/>
                         <outlet property="nameOfExercise" destination="9lU-Ep-wLO" id="QYf-Yw-Q2P"/>
+                        <outlet property="repsOfExercise" destination="fKc-1k-CoP" id="wFe-61-o6J"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1b-aK-rgl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2222" y="515"/>
+            <point key="canvasLocation" x="1198.5507246376812" y="1201.6304347826087"/>
         </scene>
-        <!--Exercises Controller-->
+        <!--My workouts-->
         <scene sceneID="0kh-1z-zJF">
             <objects>
                 <viewController id="YOQ-09-KuE" customClass="ExercisesController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -638,7 +664,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dc0-gV-tlR">
-                                <rect key="frame" x="145" y="315" width="126" height="36"/>
+                                <rect key="frame" x="144" y="469" width="126" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="colorButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -649,17 +675,27 @@
                                     <action selector="showExercises:" destination="YOQ-09-KuE" eventType="touchUpInside" id="wh7-dn-NSP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTS-Ut-UvN">
+                                <rect key="frame" x="20" y="101" width="374" height="347"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jpj-DL-wrK"/>
                         <color key="backgroundColor" name="colorBackground"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PLE-QM-hR0"/>
+                    <navigationItem key="navigationItem" title="My workouts" id="PLE-QM-hR0"/>
+                    <connections>
+                        <outlet property="labelWorkout" destination="zTS-Ut-UvN" id="cOY-Fe-QqY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hi8-pt-PfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455" y="783"/>
+            <point key="canvasLocation" x="-1214" y="657"/>
         </scene>
-        <!--Emom Controller-->
+        <!--EMOM Timer-->
         <scene sceneID="rxb-ZC-C1O">
             <objects>
                 <viewController id="CR1-DI-4yM" customClass="EmomController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -750,14 +786,14 @@
                             <constraint firstItem="cgL-NQ-X6s" firstAttribute="bottom" secondItem="rea-kP-0fi" secondAttribute="bottom" id="kJw-M5-KJt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1HW-AK-Mg2"/>
+                    <navigationItem key="navigationItem" title="EMOM Timer" id="1HW-AK-Mg2"/>
                     <connections>
                         <outlet property="timerState" destination="njw-FA-QVl" id="bZx-zP-HYa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lE-Jb-BhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455" y="-24"/>
+            <point key="canvasLocation" x="-455" y="-186"/>
         </scene>
         <!--Add workout-->
         <scene sceneID="ddC-Rw-YWC">
@@ -822,73 +858,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdd-mS-BPc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1306" y="492"/>
-        </scene>
-        <!--Name of Checklist-->
-        <scene sceneID="jyK-E2-05Q">
-            <objects>
-                <tableViewController id="jZI-MU-d0e" customClass="TableExercisesViewController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Dt-Pd-DCB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Items" id="WdN-Zb-4Jx">
-                                <rect key="frame" x="0.0" y="28" width="414" height="26.666666030883789"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WdN-Zb-4Jx" id="xFi-0P-Zsg">
-                                    <rect key="frame" x="0.0" y="0.0" width="350.66666666666669" height="26.666666030883789"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="8JS-fX-Few">
-                                            <rect key="frame" x="0.0" y="0.0" width="350.66666666666669" height="26.666666666666668"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szi-kx-BhZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="26.666666666666668"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="pwj-xZ-3bA"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfX-jy-o0P">
-                                                    <rect key="frame" x="30" y="0.0" width="320.66666666666669" height="26.666666666666668"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="8JS-fX-Few" firstAttribute="top" secondItem="xFi-0P-Zsg" secondAttribute="top" id="FhK-xS-rQb"/>
-                                        <constraint firstAttribute="trailing" secondItem="8JS-fX-Few" secondAttribute="trailing" id="LIZ-VG-ZOf"/>
-                                        <constraint firstItem="8JS-fX-Few" firstAttribute="leading" secondItem="xFi-0P-Zsg" secondAttribute="leading" id="PQS-80-heP"/>
-                                        <constraint firstAttribute="bottom" secondItem="8JS-fX-Few" secondAttribute="bottom" id="pVZ-NF-Heh"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="TWw-KT-OYW" kind="show" identifier="EditItem" trigger="accessoryAction" id="ZLC-m1-nHi"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="jZI-MU-d0e" id="j85-t8-top"/>
-                            <outlet property="delegate" destination="jZI-MU-d0e" id="nnb-HZ-8am"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Name of Checklist" largeTitleDisplayMode="never" id="JfD-Ux-lxK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8cj-Xq-3t9">
-                            <connections>
-                                <segue destination="TWw-KT-OYW" kind="show" identifier="AddItem" id="kTF-Z0-I9T"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wph-nQ-OMD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2109" y="1379"/>
+            <point key="canvasLocation" x="286" y="1180"/>
         </scene>
         <!--Add Checklist-->
         <scene sceneID="e6U-UX-QYM">
@@ -1020,59 +990,10 @@
             </objects>
             <point key="canvasLocation" x="2109" y="2105"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="LEu-0W-NaJ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KOK-gC-zAV" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Vmi-2p-Ulp"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UeT-Fp-h6d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="tuz-6o-dkL" kind="relationship" relationship="rootViewController" id="yvi-Es-saJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="id2-lC-C8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="529" y="1169"/>
-        </scene>
-        <!--All Lists-->
-        <scene sceneID="7mT-aW-hif">
-            <objects>
-                <tableViewController id="tuz-6o-dkL" userLabel="All Lists" customClass="AllListViewController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y80-zu-klQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="tuz-6o-dkL" id="ZgG-UV-7J6"/>
-                            <outlet property="delegate" destination="tuz-6o-dkL" id="Nky-6c-6cY"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="b8O-ba-C6a">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Isf-Dc-tBj">
-                            <connections>
-                                <segue destination="YXZ-V8-BeS" kind="show" identifier="AddChecklist" id="OIw-nb-9oW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="jZI-MU-d0e" kind="show" identifier="ShowChecklist" id="mJx-WR-YQM"/>
-                        <segue destination="YXZ-V8-BeS" kind="show" identifier="EditChecklist" id="D7A-fl-NrK"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dhT-B0-Gxl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1306" y="1379"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZLC-m1-nHi"/>
-        <segue reference="OIw-nb-9oW"/>
         <segue reference="3aM-lY-8A0"/>
+        <segue reference="4sg-tC-brc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backgound2" width="56" height="100"/>
@@ -1088,6 +1009,9 @@
         <namedColor name="colorText">
             <color red="1" green="0.83137254901960789" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

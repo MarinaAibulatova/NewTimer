@@ -21,6 +21,9 @@
 		9C3BDF102630554000C9F614 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BDF0F2630554000C9F614 /* AuthViewController.swift */; };
 		9C4D3FC826316331007A153F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D3FC726316331007A153F /* AuthManager.swift */; };
 		9C4D3FCC2636FE91007A153F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D3FCB2636FE91007A153F /* DesignableView.swift */; };
+		9C4D3FD026398144007A153F /* WorkoutsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D3FCF26398144007A153F /* WorkoutsList.swift */; };
+		9C4D3FD326399636007A153F /* WorkoutOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D3FD226399636007A153F /* WorkoutOfTheDay.swift */; };
+		9C4D3FD62639E89D007A153F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D3FD52639E89D007A153F /* Token.swift */; };
 		9C62137E25D3F9D900BC670F /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62137D25D3F9D900BC670F /* Constans.swift */; };
 		9C62138225D3FBF800BC670F /* stopTimer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C62138125D3FBF800BC670F /* stopTimer.mp3 */; };
 		9C62138525D3FC0400BC670F /* startRound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9C62138425D3FC0400BC670F /* startRound.mp3 */; };
@@ -53,6 +56,9 @@
 		9C3BDF0F2630554000C9F614 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		9C4D3FC726316331007A153F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		9C4D3FCB2636FE91007A153F /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		9C4D3FCF26398144007A153F /* WorkoutsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsList.swift; sourceTree = "<group>"; };
+		9C4D3FD226399636007A153F /* WorkoutOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOfTheDay.swift; sourceTree = "<group>"; };
+		9C4D3FD52639E89D007A153F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		9C62137D25D3F9D900BC670F /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		9C62138125D3FBF800BC670F /* stopTimer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stopTimer.mp3; sourceTree = "<group>"; };
 		9C62138425D3FC0400BC670F /* startRound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = startRound.mp3; sourceTree = "<group>"; };
@@ -131,6 +137,27 @@
 			path = TODO;
 			sourceTree = "<group>";
 		};
+		9C4D3FCE26397D8F007A153F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9C4D3FCF26398144007A153F /* WorkoutsList.swift */,
+				9C4D3FD226399636007A153F /* WorkoutOfTheDay.swift */,
+				9C4D3FD52639E89D007A153F /* Token.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		9C4D3FD826401501007A153F /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9C2DA1F625BFF8F800ABD582 /* MenuController.swift */,
+				9CAAFF7725C1BCA6004974A0 /* TimerController.swift */,
+				9C983AF625F0D7CF00D6AC78 /* EmomController.swift */,
+				9C3BDEFA262DF63000C9F614 /* ExercisesController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		9C62138025D3FBE300BC670F /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +170,7 @@
 		9CAAFF7D25C7EAD7004974A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9C4D3FCE26397D8F007A153F /* API */,
 				9CAAFF8025C83F54004974A0 /* Timer.swift */,
 				9C62137D25D3F9D900BC670F /* Constans.swift */,
 				9C62138725D40B8D00BC670F /* Player.swift */,
@@ -167,11 +195,8 @@
 		9CAAFF7F25C7EAE5004974A0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9C4D3FD826401501007A153F /* Menu */,
 				9C3BDEF4262050DA00C9F614 /* Lists */,
-				9C2DA1F625BFF8F800ABD582 /* MenuController.swift */,
-				9C3BDEFA262DF63000C9F614 /* ExercisesController.swift */,
-				9CAAFF7725C1BCA6004974A0 /* TimerController.swift */,
-				9C983AF625F0D7CF00D6AC78 /* EmomController.swift */,
 				9C3BDF0F2630554000C9F614 /* AuthViewController.swift */,
 				9C4D3FCB2636FE91007A153F /* DesignableView.swift */,
 			);
@@ -251,7 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C2DA1F725BFF8F800ABD582 /* MenuController.swift in Sources */,
+				9C4D3FD62639E89D007A153F /* Token.swift in Sources */,
 				9C4D3FC826316331007A153F /* AuthManager.swift in Sources */,
+				9C4D3FD326399636007A153F /* WorkoutOfTheDay.swift in Sources */,
 				9C3BDEFB262DF63000C9F614 /* ExercisesController.swift in Sources */,
 				9C983AF725F0D7CF00D6AC78 /* EmomController.swift in Sources */,
 				9C3BDEFE262DF7DE00C9F614 /* ExerciseManager.swift in Sources */,
@@ -261,6 +288,7 @@
 				9CDF5BA7261B4FA900AB16A7 /* Workout.swift in Sources */,
 				9C62137E25D3F9D900BC670F /* Constans.swift in Sources */,
 				9CDF5B922609D65900AB16A7 /* AddExerciseViewController.swift in Sources */,
+				9C4D3FD026398144007A153F /* WorkoutsList.swift in Sources */,
 				9CDF5BAA261B503200AB16A7 /* WorkoutsListViewController.swift in Sources */,
 				9C2DA1F325BFF8F800ABD582 /* AppDelegate.swift in Sources */,
 				9C3BDF102630554000C9F614 /* AuthViewController.swift in Sources */,
