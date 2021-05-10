@@ -31,4 +31,5 @@ struct SetList: Codable {
 struct ExerciseList: Codable {
     var obj: DescriptionOfObject
     var setting_text: String
+    var comment_list: [String]
 }

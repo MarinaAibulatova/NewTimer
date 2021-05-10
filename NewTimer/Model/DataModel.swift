@@ -8,10 +8,18 @@
 import Foundation
 import UIKit
 
-class DataModel {
+protocol DataModelDelegate: class {
+    func didFinishCreateWorkout(workout: Workout)
+}
+
+class DataModel: ExerciseManagerDelegate {
+    
     var workouts = [Workout]()
+    var exerciseManager = ExerciseManager()
+    weak var delegate: DataModelDelegate?
     
     init() {
+        exerciseManager.delegate = self
         loadData()
     }
     
@@ -43,15 +51,50 @@ class DataModel {
     }
     
     func loadData() {
-        let path = dataFilePuth()
-        if let data = try? Data(contentsOf: path) {
-            let decoder = PropertyListDecoder()
-            do {
-                workouts = try decoder.decode([Workout].self, from: data)
-                sortWorkouts()
-            }catch {
-                print(error)
+        exerciseManager.receiveWorkoutsList()
+        
+        
+//        let path = dataFilePuth()
+//        if let data = try? Data(contentsOf: path) {
+//            let decoder = PropertyListDecoder()
+//            do {
+//                workouts = try decoder.decode([Workout].self, from: data)
+//                sortWorkouts()
+//            }catch {
+//                print(error)
+//            }
+//        }
+    }
+    
+    func didFinishGettingWorkout(workout: WorkoutOfTheDay) {
+        print(workout)
+        var exercises = [Exercise]()
+        for dayList in workout.day_list {
+            if let name = dayList.obj.description {
+                let newWorkout = Workout(nameOfWorkout: name)
+                
+                for setList in dayList.set_list {
+                    for exercise in setList.exercise_list {
+                        let newExercise = Exercise()
+                        newExercise.name = exercise.obj.name!
+                        
+                        var descriptionOfExercise           = exercise.obj.description!.replacingOccurrences(of: "<p>", with: "")
+                        descriptionOfExercise               = descriptionOfExercise.replacingOccurrences(of: "</p>", with: "")
+                        newExercise.descriptionOfExercise   = descriptionOfExercise
+                        
+                        newExercise.reps = exercise.setting_text
+                        if exercise.comment_list.count > 0 {
+                            newExercise.comment = exercise.comment_list[0]
+                        }
+                        exercises.append(newExercise)
+                    }
+                }
+                newWorkout.exercises = exercises
+                workouts.append(newWorkout)
+                delegate?.didFinishCreateWorkout(workout: newWorkout)
             }
+            exercises.removeAll()
         }
+        
     }
 }

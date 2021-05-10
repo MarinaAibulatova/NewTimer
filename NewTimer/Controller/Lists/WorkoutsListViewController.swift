@@ -12,7 +12,7 @@ protocol WorkoutsListViewControllerDelegate: class {
     func endChouseWorkout(_ controller: WorkoutsListViewController, _ workout: Workout)
 }
 
-class WorkoutsListViewController: UITableViewController, WorkoutsDetailViewControllerDelegate, UIGestureRecognizerDelegate {
+class WorkoutsListViewController: UITableViewController, WorkoutsDetailViewControllerDelegate, UIGestureRecognizerDelegate, DataModelDelegate {
  
     var dataModel: DataModel!
     var numberOfTaps: Int = 0
@@ -22,6 +22,7 @@ class WorkoutsListViewController: UITableViewController, WorkoutsDetailViewContr
         super.viewDidLoad()
         
         dataModel = DataModel()
+        dataModel.delegate = self
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "WorkoutCell")
        
     }
@@ -30,6 +31,7 @@ class WorkoutsListViewController: UITableViewController, WorkoutsDetailViewContr
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+    
     
     //MARK: - Prepare
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,6 +44,14 @@ class WorkoutsListViewController: UITableViewController, WorkoutsDetailViewContr
             controller.delegate = self
         }
         dataModel.saveData()
+    }
+    
+    //MARK: - DataModelDelegate
+    
+    func didFinishCreateWorkout(workout: Workout) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     
