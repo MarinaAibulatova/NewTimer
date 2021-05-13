@@ -32,4 +32,10 @@ struct ExerciseList: Codable {
     var obj: DescriptionOfObject
     var setting_text: String
     var comment_list: [String]
+    var image_list: [Image]
+}
+
+struct Image: Codable {
+    var image: String
+    var is_main: Bool
 }

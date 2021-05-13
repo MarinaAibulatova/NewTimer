@@ -22,6 +22,8 @@ struct Constans {
     //MARK: - API components/ Workouts
     static let urlWorkoutsList = "https://wger.de/api/v2/workout/"
     static let urlWorkout = "https://wger.de/api/v2/workout/id/canonical_representation/"
+    //MARK: - API components/pictures
+    static let urlImage = "https://wger.de"
     
     
 }

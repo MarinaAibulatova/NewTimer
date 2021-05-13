@@ -69,10 +69,11 @@ class DataModel: ExerciseManagerDelegate {
     func didFinishGettingWorkout(workout: WorkoutOfTheDay) {
         print(workout)
         var exercises = [Exercise]()
+       
         for dayList in workout.day_list {
             if let name = dayList.obj.description {
                 let newWorkout = Workout(nameOfWorkout: name)
-                
+            
                 for setList in dayList.set_list {
                     for exercise in setList.exercise_list {
                         let newExercise = Exercise()
@@ -85,6 +86,13 @@ class DataModel: ExerciseManagerDelegate {
                         newExercise.reps = exercise.setting_text
                         if exercise.comment_list.count > 0 {
                             newExercise.comment = exercise.comment_list[0]
+                        }
+                        
+                        for image in exercise.image_list {
+                            if image.is_main {
+                                newExercise.imageURL = image.image
+                                break
+                            }
                         }
                         exercises.append(newExercise)
                     }

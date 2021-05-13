@@ -21,6 +21,14 @@ class AddExerciseViewController: UITableViewController, UITextFieldDelegate {
             commentOfExercise.text = newItem.comment
             title = "Edit exercise"
             buttonDone.isEnabled = true
+            
+            //image
+            if let image = newItem.imageURL {
+                let stringURL = Constans.urlImage + image
+                let url = URL(string: stringURL)
+                let data = try? Data(contentsOf: url!)
+                imageOfExercise.image = UIImage(data: data!)
+            }
         }
     }
     
@@ -30,6 +38,7 @@ class AddExerciseViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var descriptionOfExercise: UITextView!
     @IBOutlet weak var repsOfExercise: UITextField!
     @IBOutlet weak var commentOfExercise: UITextField!
+    @IBOutlet weak var imageOfExercise: UIImageView!
     
     
     weak var delegate: AddExerciseViewControllerDelegate?

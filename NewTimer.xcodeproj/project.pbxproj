@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57739E88F54FD0EA098AA742 /* Pods_NewTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D652A79E9E7E017C638C9438 /* Pods_NewTimer.framework */; };
 		9C2DA1F325BFF8F800ABD582 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DA1F225BFF8F800ABD582 /* AppDelegate.swift */; };
 		9C2DA1F525BFF8F800ABD582 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DA1F425BFF8F800ABD582 /* SceneDelegate.swift */; };
 		9C2DA1F725BFF8F800ABD582 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DA1F625BFF8F800ABD582 /* MenuController.swift */; };
@@ -40,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		857DFE22C9E73118575A4047 /* Pods-NewTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewTimer.release.xcconfig"; path = "Target Support Files/Pods-NewTimer/Pods-NewTimer.release.xcconfig"; sourceTree = "<group>"; };
+		98DD7B6F6DDE6E7C2B59EBD2 /* Pods-NewTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewTimer.debug.xcconfig"; path = "Target Support Files/Pods-NewTimer/Pods-NewTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		9C2DA1EF25BFF8F800ABD582 /* NewTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C2DA1F225BFF8F800ABD582 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C2DA1F425BFF8F800ABD582 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		9CDF5BA6261B4FA900AB16A7 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		9CDF5BA9261B503200AB16A7 /* WorkoutsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListViewController.swift; sourceTree = "<group>"; };
 		9CDF5BAC261B549300AB16A7 /* WorkoutsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsDetailViewController.swift; sourceTree = "<group>"; };
+		D652A79E9E7E017C638C9438 /* Pods_NewTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,17 +83,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57739E88F54FD0EA098AA742 /* Pods_NewTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3497074370C36A948CB3A3AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D652A79E9E7E017C638C9438 /* Pods_NewTimer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		898B9276B15F7370B0F08BA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98DD7B6F6DDE6E7C2B59EBD2 /* Pods-NewTimer.debug.xcconfig */,
+				857DFE22C9E73118575A4047 /* Pods-NewTimer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9C2DA1E625BFF8F800ABD582 = {
 			isa = PBXGroup;
 			children = (
 				9C2DA1F125BFF8F800ABD582 /* NewTimer */,
 				9C2DA1F025BFF8F800ABD582 /* Products */,
+				898B9276B15F7370B0F08BA9 /* Pods */,
+				3497074370C36A948CB3A3AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C2DA20325BFF8FA00ABD582 /* Build configuration list for PBXNativeTarget "NewTimer" */;
 			buildPhases = (
+				D8705CB0774C0854147AED5B /* [CP] Check Pods Manifest.lock */,
 				9C2DA1EB25BFF8F800ABD582 /* Sources */,
 				9C2DA1EC25BFF8F800ABD582 /* Frameworks */,
 				9C2DA1ED25BFF8F800ABD582 /* Resources */,
+				0B85387F1F364ED94C040C49 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +296,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B85387F1F364ED94C040C49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewTimer/Pods-NewTimer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewTimer/Pods-NewTimer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NewTimer/Pods-NewTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8705CB0774C0854147AED5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NewTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C2DA1EB25BFF8F800ABD582 /* Sources */ = {
@@ -443,6 +512,7 @@
 		};
 		9C2DA20425BFF8FA00ABD582 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98DD7B6F6DDE6E7C2B59EBD2 /* Pods-NewTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +532,7 @@
 		};
 		9C2DA20525BFF8FA00ABD582 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 857DFE22C9E73118575A4047 /* Pods-NewTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

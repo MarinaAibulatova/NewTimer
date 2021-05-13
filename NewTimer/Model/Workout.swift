@@ -13,4 +13,5 @@ class Workout: NSObject, Codable {
     init(nameOfWorkout name: String) {
         self.name = name
     }
+    var urlImage: String?
 }

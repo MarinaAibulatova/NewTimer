@@ -12,4 +12,5 @@ class Exercise: NSObject, Encodable, Decodable {
     var descriptionOfExercise: String = ""
     var reps: String = ""
     var comment: String = ""
+    var imageURL: String?
 }
