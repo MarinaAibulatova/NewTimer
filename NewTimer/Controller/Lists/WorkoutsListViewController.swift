@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SVGKit
 
 protocol WorkoutsListViewControllerDelegate: class {
     func endChouseWorkout(_ controller: WorkoutsListViewController, _ workout: Workout)
@@ -49,6 +50,14 @@ class WorkoutsListViewController: UITableViewController, WorkoutsDetailViewContr
     //MARK: - DataModelDelegate
     
     func didFinishCreateWorkout(workout: Workout) {
+//        let urlImage = Constans.urlImage + workout.urlImage!
+//        if let imageURL = URL(string: urlImage) {
+//            if let data = try? Data(contentsOf: imageURL) {
+//                print("data \(data)")
+//                let anSVGImage = SVGKImage(data: data)
+//            }
+//        }
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
