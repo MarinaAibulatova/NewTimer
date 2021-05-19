@@ -607,7 +607,7 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" id="yPq-aP-Zco" userLabel="Description of exercise">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="102" width="414" height="34"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <color key="textColor" systemColor="labelColor"/>

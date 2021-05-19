@@ -21,6 +21,75 @@ struct ExerciseManager {
     
     weak var delegate: ExerciseManagerDelegate?
    
+    func postWorkout(nameOfWorkout: String) {
+        let url = URL(string: Constans.urlWorkoutsList)!
+        let paremeters: [String: Any] = ["name": nameOfWorkout, "creation_date": "2021-04-28", "description": ""]
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        if let token = Token.tokenKey {
+            request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: paremeters, options: .prettyPrinted)
+        } catch {
+            print(error)
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if error != nil {
+                print(error)
+            }
+            print("ok")
+        }
+        task.resume()
+        
+    }
+    
+    func postExercise() {
+        let url = URL(string: "https://wger.de/api/v2/day/")
+        
+        let newStructure: [String: Any] = ["training": 269641, "description": "testNew2", "day": [1,2]]
+        
+        let parameters: [String: Any] = ["results": newStructure]
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        if let token = Token.tokenKey {
+            request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: newStructure, options: .prettyPrinted)
+        } catch {
+            print(error)
+        }
+        
+        let task = session.dataTask(with: request) {(data, response, error) in
+            if error != nil {
+                print(error)
+            }
+            
+            do {
+                let myData = try JSONSerialization.jsonObject(with: data!, options: []) 
+                print("ok")
+                
+            }catch {
+                print(error)
+            }
+        }
+        task.resume()
+        
+    }
+    
     //MARK: - Workouts list
     func receiveWorkoutsList(){
         let url = URL(string: Constans.urlWorkoutsList)!
