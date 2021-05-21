@@ -19,6 +19,7 @@ class WorkoutsDetailViewController: UITableViewController, UITextFieldDelegate {
     
     var workoutToEdit: Workout?
     weak var delegate: WorkoutsDetailViewControllerDelegate?
+    var exerciseManager = ExerciseManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +37,13 @@ class WorkoutsDetailViewController: UITableViewController, UITextFieldDelegate {
     //MARK: - Actions
 
     @IBAction func done(_ sender: Any) {
+        exerciseManager.postExercise()
         if let workout = workoutToEdit {
             workout.name = nameOfWorkoutTextField.text!
             delegate?.workoutsDetailViewController(self, didFinishEditing: workout)
         } else {
+            //add workout to wger.de
+            exerciseManager.postWorkout(nameOfWorkout: nameOfWorkoutTextField.text!)
             let newWorkout = Workout(nameOfWorkout: nameOfWorkoutTextField.text!)
             delegate?.workoutsDetailViewController(self, didFinishAdding: newWorkout)
         }

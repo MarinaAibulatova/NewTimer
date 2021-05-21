@@ -67,7 +67,7 @@ class DataModel: ExerciseManagerDelegate {
     }
     
     func didFinishGettingWorkout(workout: WorkoutOfTheDay) {
-        print(workout)
+       // print(workout)
         var exercises = [Exercise]()
        
         for dayList in workout.day_list {
