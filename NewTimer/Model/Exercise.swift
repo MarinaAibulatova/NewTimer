@@ -13,4 +13,6 @@ class Exercise: NSObject, Encodable, Decodable {
     var reps: String = ""
     var comment: String = ""
     var imageURL: String?
+    var wgerData: ExerciseWger?
+    
 }

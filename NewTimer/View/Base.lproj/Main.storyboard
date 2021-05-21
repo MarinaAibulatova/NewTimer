@@ -554,7 +554,7 @@
                     <navigationItem key="navigationItem" title="My exercises" largeTitleDisplayMode="always" id="RfQ-Wv-UuU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hDE-vD-wWu">
                             <connections>
-                                <segue destination="aef-27-a8X" kind="show" identifier="AddExercise" id="3aM-lY-8A0"/>
+                                <segue destination="KfX-nZ-rCE" kind="show" identifier="AddExercise" id="Rhi-4d-6IN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -562,6 +562,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rx-T9-SuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1201" y="469"/>
+        </scene>
+        <!--Search Exercise Table View Controller-->
+        <scene sceneID="oFF-C5-hoc">
+            <objects>
+                <tableViewController id="KfX-nZ-rCE" customClass="SearchExerciseTableViewController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="inc-jv-PhG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="OAB-t6-mHu">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseCell" id="fNV-sK-clV">
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fNV-sK-clV" id="WXW-Xl-akE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KfX-nZ-rCE" id="egS-4C-P5a"/>
+                            <outlet property="delegate" destination="KfX-nZ-rCE" id="dzc-e4-5mH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="knB-cH-jc2"/>
+                    <connections>
+                        <outlet property="searchBar" destination="OAB-t6-mHu" id="ZC6-pB-F04"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cTC-ZR-eRS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2338" y="469"/>
+        </scene>
+        <!--Search Exercise View Controller-->
+        <scene sceneID="3oa-dL-Z0d">
+            <objects>
+                <viewController id="MNM-M8-vRA" customClass="SearchExerciseViewController" customModule="NewTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ibo-x7-fwL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Qg9-ud-LwC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LUu-4j-1Rb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eiy-yT-mDD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3339" y="-421"/>
         </scene>
         <!--Add exercise-->
         <scene sceneID="uTw-hg-2pR">
@@ -995,9 +1048,27 @@
             </objects>
             <point key="canvasLocation" x="2109" y="2105"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ybt-Iz-qfy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fkg-o3-LXF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="m90-IO-M5J"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sE2-Re-0xg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MNM-M8-vRA" kind="relationship" relationship="rootViewController" id="j9R-Pf-PoN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="627-bw-kHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2241" y="-421"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8KQ-ry-mHR"/>
         <segue reference="4sg-tC-brc"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ExercisesViewController: UITableViewController, AddExerciseViewControllerDelegate {
+class ExercisesViewController: UITableViewController, AddExerciseViewControllerDelegate, SearchExerciseTableViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class ExercisesViewController: UITableViewController, AddExerciseViewControllerD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddExercise" {
-            let controller = segue.destination as! AddExerciseViewController
+            let controller = segue.destination as! SearchExerciseTableViewController
             controller.delegate = self
         }else if segue.identifier == "EditExercise" {
             let controller = segue.destination as! AddExerciseViewController
@@ -90,6 +90,14 @@ class ExercisesViewController: UITableViewController, AddExerciseViewControllerD
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
       
+    }
+    
+    //MARK: - SearchExerciseTableViewControllerDelegate
+    
+    func didFinishChooseExercise(exercise: Exercise) {
+        print(exercise)
+        workout.exercises.append(exercise)
+        tableView.reloadData()
     }
     
 }

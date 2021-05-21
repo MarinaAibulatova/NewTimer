@@ -39,3 +39,20 @@ struct Image: Codable {
     var image: String
     var is_main: Bool
 }
+
+//search exercises
+
+struct SearchResultsOfExercises: Codable {
+    var suggestions: [SearchResult]
+}
+
+struct SearchResult: Codable {
+    var value: String
+    var data: ExerciseWger
+}
+
+struct ExerciseWger: Codable {
+    var id: Int
+    var name: String
+    var image: String?
+}
