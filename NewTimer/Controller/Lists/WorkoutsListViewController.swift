@@ -49,7 +49,7 @@ class WorkoutsListViewController: UITableViewController, WorkoutsDetailViewContr
     
     //MARK: - DataModelDelegate
     
-    func didFinishCreateWorkout(workout: Workout) {
+    func didFinishCreateWorkout(workout: [Workout]) {
 //        let urlImage = Constans.urlImage + workout.urlImage!
 //        if let imageURL = URL(string: urlImage) {
 //            if let data = try? Data(contentsOf: imageURL) {

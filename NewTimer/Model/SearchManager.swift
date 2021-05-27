@@ -8,7 +8,8 @@
 import Foundation
 
 protocol SearchManagerDelegate: class {
-    func didFinishSearchExercises(exercises: [Exercise])
+    func didFinishSearchExercises(searchResults: [SearchResult])
+    func didFinishCreateExercise(exercise: Exercise)
 }
 
 struct SearchManager {
@@ -47,8 +48,8 @@ struct SearchManager {
             if let httpsResponse = response as? HTTPURLResponse {
                 
                 if let safeData = data {
-                    var exercisesArray = self.parseJSON(data: safeData)
-                    delegate?.didFinishSearchExercises(exercises: exercisesArray)
+                    self.parseJSON(data: safeData)
+                    //delegate?.didFinishSearchExercises(exercises: exercisesArray)
                 }
             }
             
@@ -59,26 +60,77 @@ struct SearchManager {
         
     }
     
-    func parseJSON(data: Data) -> [Exercise] {
-        var exercisesArray = [Exercise]()
+    func parseJSON(data: Data) {
+        
         let decoder = JSONDecoder()
         do {
             let decoderData = try decoder.decode(SearchResultsOfExercises.self, from: data)
             print(decoderData)
             //esxercise array
-            
-            for result in decoderData.suggestions {
-                let newExerciseWger = ExerciseWger(id: result.data.id, name: result.data.name, image: result.data.image)
-                
-                var exercise = Exercise()
-                exercise.wgerData = newExerciseWger
-                exercise.name = result.data.name
-                exercisesArray.append(exercise)
-            }
-            
+            delegate?.didFinishSearchExercises(searchResults: decoderData.suggestions)
+         
         } catch {
             print(error)
         }
-        return exercisesArray
+    }
+    
+    func createExercise(searchResult: SearchResult) {
+        let myURL = Constans.urlExerciseInfo.replacingOccurrences(of: "id", with: String(searchResult.data.id))
+        
+        guard let url = URL(string: myURL) else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        request.setValue(" application/json", forHTTPHeaderField: "Accept")
+        request.setValue(" application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let token = Token.tokenKey {
+            request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if error != nil {
+                print(error)
+            }
+            
+            if let httpsResponse = response as? HTTPURLResponse {
+                
+                if let safeData = data {
+                    self.parseJSONExercise(data: safeData)
+                    //delegate?.didFinishSearchExercises(exercises: exercisesArray)
+                }
+            }
+        }
+        task.resume()
+        
+    }
+    
+    func parseJSONExercise(data: Data) {
+        
+        let decoder = JSONDecoder()
+        do {
+            let decoderData = try decoder.decode(ExerciseWger.self, from: data)
+            print(decoderData)
+            //esxercise
+            var newExercise = Exercise()
+            newExercise.name = decoderData.name
+            newExercise.id = decoderData.id
+            newExercise.descriptionOfExercise = decoderData.description
+            
+            for image in decoderData.images {
+                if image.is_main {
+                    newExercise.imageURL = image.image
+                    break
+                }
+            }
+            
+            delegate?.didFinishCreateExercise(exercise: newExercise)
+         
+        } catch {
+            print(error)
+        }
     }
 }

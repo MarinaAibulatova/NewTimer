@@ -27,10 +27,10 @@ class ExercisesController: UIViewController, ExerciseManagerDelegate {
     }
     
     //MARK: - Exercise Manager Delegate
-    func didFinishGettingWorkout(workout: WorkoutOfTheDay) {
-        DispatchQueue.main.async {
-            self.labelWorkout.text = self.labelWorkout.text! + "\(workout.day_list)"
-        }
+    func didFinishGettingWorkout(workout: [Workout]) {
+//        DispatchQueue.main.async {
+//            self.labelWorkout.text = self.labelWorkout.text! + "\(workout.day_list)"
+//        }
     }
     
 }

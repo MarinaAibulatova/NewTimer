@@ -20,6 +20,7 @@ class ExercisesViewController: UITableViewController, AddExerciseViewControllerD
     
    // var items = [Exercise]()
     var workout: Workout!
+    var exerciseManager: ExerciseManager?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddExercise" {
@@ -95,9 +96,16 @@ class ExercisesViewController: UITableViewController, AddExerciseViewControllerD
     //MARK: - SearchExerciseTableViewControllerDelegate
     
     func didFinishChooseExercise(exercise: Exercise) {
-        print(exercise)
+        //create exercise and update inf from wger
         workout.exercises.append(exercise)
-        tableView.reloadData()
+       // workout.exercises.append(exercise)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+        // add exercise to wger.de
+       // exerciseManager = ExerciseManager()
+        
     }
     
 }
