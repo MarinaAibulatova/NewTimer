@@ -39,8 +39,10 @@ class SearchExerciseTableViewController: UITableViewController, UISearchBarDeleg
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
-        //to do - errors
-        cell.textLabel?.text = searchResults[indexPath.row].value
+        
+        if searchResults.count > indexPath.row {
+            cell.textLabel?.text = searchResults[indexPath.row].value
+        }
         return cell
     }
     

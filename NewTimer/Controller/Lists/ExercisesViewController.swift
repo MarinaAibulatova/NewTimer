@@ -96,12 +96,20 @@ class ExercisesViewController: UITableViewController, AddExerciseViewControllerD
     //MARK: - SearchExerciseTableViewControllerDelegate
     
     func didFinishChooseExercise(exercise: Exercise) {
-        //create exercise and update inf from wger
         workout.exercises.append(exercise)
-       // workout.exercises.append(exercise)
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+        exerciseManager = ExerciseManager()
+        let postExercise: [String: Any] = ["set": workout.setId, "exercise": exercise.id]
+        //exerciseManager?.postExercise(parametersToPost: postExercise)
+       
+        exerciseManager?.postExercise(parametersToPost: postExercise, settingIdCompletionHandler: { (settingId, error) in
+            
+            if let settindId = settingId {
+                exercise.settingId = settingId
+            }
+        })
         
         // add exercise to wger.de
        // exerciseManager = ExerciseManager()

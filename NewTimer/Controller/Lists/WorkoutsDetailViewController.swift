@@ -37,7 +37,7 @@ class WorkoutsDetailViewController: UITableViewController, UITextFieldDelegate {
     //MARK: - Actions
 
     @IBAction func done(_ sender: Any) {
-        exerciseManager.postExercise()
+       // exerciseManager.postExercise()
         if let workout = workoutToEdit {
             workout.name = nameOfWorkoutTextField.text!
             delegate?.workoutsDetailViewController(self, didFinishEditing: workout)

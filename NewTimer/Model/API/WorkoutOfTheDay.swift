@@ -30,6 +30,7 @@ struct SetList: Codable {
 }
 
 struct ExerciseList: Codable {
+    var setting_obj_list: [Setting]
     var obj: DescriptionOfObject
     var setting_text: String
     var comment_list: [String]
@@ -91,9 +92,26 @@ struct Set: Codable {
 }
 
 struct Setting: Codable {
-    let id: Int
+    let id: Int?
     let set: Int //set id
     let exercise: Int //exercise id
+    let repetition_unit: Int
     let reps: Int
-    //let weight: String
+    let weight: String?
+    let weight_unit: Int
+    let order: Int
+    let comment: String
+    
+    init(set: Int, exercise: Int) {
+        self.set = set
+        self.exercise = exercise
+        self.repetition_unit = 1
+        self.weight_unit = 1
+        self.reps = 20
+        self.order = 1
+        self.weight = "1"
+        self.comment = "new2"
+        self.id = nil
+    }
+    
 }

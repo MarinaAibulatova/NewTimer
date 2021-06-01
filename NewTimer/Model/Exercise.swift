@@ -15,4 +15,5 @@ class Exercise: NSObject, Codable {
     var imageURL: String?
     var wgerData: ExerciseWger?
     var id: Int?
+    var settingId: Int?
 }
