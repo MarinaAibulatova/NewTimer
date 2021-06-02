@@ -68,6 +68,27 @@ struct ExerciseManager {
         return request
     }
     
+    func createPutRequest(urlString: String, parameters: [String: Any]) -> URLRequest {
+        let url = URL(string: urlString)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        if let token = Token.tokenKey {
+            request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        }catch{
+            print(error)
+        }
+        
+        return request
+    }
+    
     func createPostRequest(urlString: String, parameters: [String: Any]) -> URLRequest {
         let url = URL(string: urlString)!
         var request = URLRequest(url: url)
@@ -83,7 +104,6 @@ struct ExerciseManager {
         let newItem = Setting(set: parameters["set"] as! Int, exercise: parameters["exercise"] as! Int)
         
         do {
-            //request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
             request.httpBody = try JSONEncoder().encode(newItem)
         }catch{
             print(error)
@@ -92,6 +112,7 @@ struct ExerciseManager {
         return request
     }
     
+    //MARK: - Exercise: add/update
     
     func postExercise(parametersToPost: [String: Any], settingIdCompletionHandler: @escaping (Int?, Error?) -> Void) {
        
@@ -122,6 +143,23 @@ struct ExerciseManager {
         
         task.resume()
         
+    }
+    
+    func updateExercise(exercise: Exercise) {
+        let settingIdString = String(exercise.settingId!)
+        let url = String("\(Constans.urlSetting)\(settingIdString)/")
+        let parameters: [String: Any] = ["reps": exercise.reps] // to:do reps as INT?
+        let request = createPutRequest(urlString: url, parameters: parameters)
+        
+        let task = session.dataTask(with: request) { (data, responce, error) in
+            if error != nil {
+                return
+            }
+            
+            print(responce)
+        }
+        
+        task.resume()
     }
     
     //MARK: - Workouts list
@@ -215,12 +253,12 @@ struct ExerciseManager {
                 newExercise.id = exercise.obj.id
                 newExercise.name = exercise.obj.name!
                 newExercise.settingId = exercise.setting_obj_list[0].id
+                newExercise.reps = exercise.setting_obj_list[0].reps
                 
                 var descriptionOfExercise           = exercise.obj.description!.replacingOccurrences(of: "<p>", with: "")
                 descriptionOfExercise               = descriptionOfExercise.replacingOccurrences(of: "</p>", with: "")
                 newExercise.descriptionOfExercise   = descriptionOfExercise
                 
-                newExercise.reps = exercise.setting_text
                 if exercise.comment_list.count > 0 {
                     newExercise.comment = exercise.comment_list[0]
                 }

@@ -16,7 +16,7 @@ class AddExerciseViewController: UITableViewController, UITextFieldDelegate {
         if let newItem = itemToEdit {
             nameOfExercise.text = itemToEdit?.name
            // print(descriptionOfExercise.text)
-            repsOfExercise.text = newItem.reps
+            repsOfExercise.text = String(newItem.reps)
             descriptionOfExercise.text = newItem.descriptionOfExercise
             commentOfExercise.text = newItem.comment
             title = "Edit exercise"
@@ -43,6 +43,7 @@ class AddExerciseViewController: UITableViewController, UITextFieldDelegate {
     
     weak var delegate: AddExerciseViewControllerDelegate?
     var itemToEdit: Exercise?
+    var exerciseManager: ExerciseManager?
     
     //MARK: - Text Field Delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -66,7 +67,13 @@ class AddExerciseViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func done(_ sender: Any) {
         if let item = itemToEdit {
             item.name = nameOfExercise.text!
+            item.reps = Int(repsOfExercise.text!)!
+            //update exercise in wger.de
+            exerciseManager = ExerciseManager()
+            exerciseManager?.updateExercise(exercise: item)
+            
             delegate?.addExerciseViewController(controller: self, itemToEdit: item)
+            
         }else {
             let newExercise = Exercise()
             newExercise.name = nameOfExercise.text!

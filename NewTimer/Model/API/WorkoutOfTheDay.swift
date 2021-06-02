@@ -107,10 +107,10 @@ struct Setting: Codable {
         self.exercise = exercise
         self.repetition_unit = 1
         self.weight_unit = 1
-        self.reps = 20
+        self.reps = 0
         self.order = 1
         self.weight = "1"
-        self.comment = "new2"
+        self.comment = ""
         self.id = nil
     }
     
