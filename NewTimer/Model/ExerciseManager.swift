@@ -205,7 +205,8 @@ struct ExerciseManager {
                         let workoutOfTheDay = jsonParser.getWorkoutOfTheDay()
                 
                         if workoutOfTheDay != nil {
-                            workouts = createWorkouts(workoutOfTheDay: workoutOfTheDay!)
+                            let newWorkouts = createWorkouts(workoutOfTheDay: workoutOfTheDay!)
+                            workouts += newWorkouts
                             group.leave()
                         }
                     }
