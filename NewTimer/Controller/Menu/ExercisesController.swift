@@ -10,6 +10,8 @@ import UIKit
 
 class ExercisesController: UIViewController, ExerciseManagerDelegate {
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         exerciseManager.delegate = self
@@ -33,4 +35,7 @@ class ExercisesController: UIViewController, ExerciseManagerDelegate {
 //        }
     }
     
+    func didFinishCreateWorkout(workout: Workout) {
+        
+    }
 }

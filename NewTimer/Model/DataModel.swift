@@ -58,4 +58,8 @@ class DataModel: ExerciseManagerDelegate {
         self.workouts = workout
         delegate?.didFinishCreateWorkout(workout: workout)
     }
+    
+    func didFinishCreateWorkout(workout: Workout) {
+        
+    }
 }

@@ -140,10 +140,12 @@ class WorkoutsListViewController: UITableViewController, WorkoutsDetailViewContr
         
         dataModel.workouts.append(workout)
         dataModel.sortWorkouts()
-        tableView.reloadData()
-       
-        navigationController?.popViewController(animated: true)
         
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.navigationController?.popViewController(animated: true)
+        }
+       
     }
     
     func workoutsDetailViewController(_ controller: WorkoutsDetailViewController, didFinishEditing workout: Workout) {

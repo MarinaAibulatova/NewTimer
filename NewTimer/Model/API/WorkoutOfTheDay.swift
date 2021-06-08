@@ -65,6 +65,27 @@ struct ExerciseWger: Codable {
 }
 
 // API
+struct WorkoutList: Codable {
+    let id: Int?
+    let creation_date: String
+    let name: String
+    let desription: String?
+    
+    init(name: String, date: String) {
+        self.id = nil
+        self.creation_date = date
+        self.name = name
+        self.desription = name
+    }
+    
+    init(id: Int, name: String, date: String) {
+        self.id = id
+        self.creation_date = date
+        self.name = name
+        self.desription = name
+    }
+}
+
 struct DayArray: Codable {
     let results: [Day]
 }
@@ -78,17 +99,45 @@ struct SettingArray: Codable {
 }
 
 struct Day: Codable {
-    let id: Int
+    let id: Int?
     let training: Int // workout id
     let description: String //delete optional
     let day: [Int]
+    
+    init(training: Int, description: String) {
+        self.id = nil
+        self.training = training
+        self.description = description
+        self.day = [1,2]
+    }
+    
+    init(id: Int, training: Int, description: String) {
+        self.id = id
+        self.training = training
+        self.description = description
+        self.day = [1,2]
+    }
 }
 
 struct Set: Codable {
-    let id: Int
+    let id: Int?
     let exerciseday: Int //day id
     let sets: Int
     let order: Int
+    
+    init(id: Int, dayId: Int) {
+        self.id = id
+        self.exerciseday = dayId
+        self.sets = 1
+        self.order = 1
+    }
+    
+    init(dayId: Int) {
+        self.id = nil
+        self.exerciseday = dayId
+        self.sets = 1
+        self.order = 1
+    }
 }
 
 struct Setting: Codable {
