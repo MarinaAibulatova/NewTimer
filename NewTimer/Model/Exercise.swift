@@ -7,12 +7,13 @@
 
 import Foundation
 
-class Exercise: NSObject, Encodable, Decodable {
+class Exercise: NSObject, Codable {
     var name: String = ""
     var descriptionOfExercise: String = ""
-    var reps: String = ""
+    var reps: Int = 0
     var comment: String = ""
     var imageURL: String?
     var wgerData: ExerciseWger?
-    
+    var id: Int?
+    var settingId: Int?
 }

@@ -14,4 +14,6 @@ class Workout: NSObject, Codable {
         self.name = name
     }
     var urlImage: String?
+    var dayId: Int?
+    var setId: Int?
 }

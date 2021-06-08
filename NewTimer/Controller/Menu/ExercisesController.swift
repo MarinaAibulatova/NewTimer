@@ -10,6 +10,8 @@ import UIKit
 
 class ExercisesController: UIViewController, ExerciseManagerDelegate {
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         exerciseManager.delegate = self
@@ -27,10 +29,13 @@ class ExercisesController: UIViewController, ExerciseManagerDelegate {
     }
     
     //MARK: - Exercise Manager Delegate
-    func didFinishGettingWorkout(workout: WorkoutOfTheDay) {
-        DispatchQueue.main.async {
-            self.labelWorkout.text = self.labelWorkout.text! + "\(workout.day_list)"
-        }
+    func didFinishGettingWorkout(workout: [Workout]) {
+//        DispatchQueue.main.async {
+//            self.labelWorkout.text = self.labelWorkout.text! + "\(workout.day_list)"
+//        }
     }
     
+    func didFinishCreateWorkout(workout: Workout) {
+        
+    }
 }

@@ -8,7 +8,8 @@
 import Foundation
 
 protocol ExerciseManagerDelegate: class {
-    func didFinishGettingWorkout(workout: WorkoutOfTheDay)
+    func didFinishGettingWorkout(workout: [Workout])
+    func didFinishCreateWorkout(workout: Workout)
 }
 
 struct ExerciseManager {
@@ -22,97 +23,152 @@ struct ExerciseManager {
     weak var delegate: ExerciseManagerDelegate?
    
     func postWorkout(nameOfWorkout: String) {
-        let url = URL(string: Constans.urlWorkoutsList)!
-        let paremeters: [String: Any] = ["name": nameOfWorkout, "creation_date": "2021-04-28", "description": ""]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let currentDate = formatter.string(from: Date())
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        let workoutListParameters: [String: Any] = ["name": nameOfWorkout, "date": currentDate]
+        var requestManager = RequestManager(urlString: Constans.urlWorkoutsList)
+        let postWorkoutRequest = requestManager.createWorkoutPostRequest(parameters: workoutListParameters)
         
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
-        if let token = Token.tokenKey {
-            request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
-        }
-        
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: paremeters, options: .prettyPrinted)
-        } catch {
-            print(error)
-        }
-        
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if error != nil {
-                print(error)
-            }
-            print("ok")
-        }
-        task.resume()
-        
-    }
-    
-    func postExercise() {
-        let url = URL(string: "https://wger.de/api/v2/day/")
-        
-        let newStructure: [String: Any] = ["training": 269641, "description": "testNew2", "day": [1,2]]
-        
-        let parameters: [String: Any] = ["results": newStructure]
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
-        if let token = Token.tokenKey {
-            request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
-        }
-        
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: newStructure, options: .prettyPrinted)
-        } catch {
-            print(error)
-        }
-        
-        let task = session.dataTask(with: request) {(data, response, error) in
+        let task = session.dataTask(with: postWorkoutRequest) { (data, responce, error) in
             if error != nil {
                 print(error)
             }
             
-            do {
-                let myData = try JSONSerialization.jsonObject(with: data!, options: []) 
-                print("ok")
-                
-            }catch {
+            if let _ = responce as? HTTPURLResponse {
+                if let safeData = data {
+                    let jsonParser = JSONParser(data: safeData)
+                    let workoutList  = jsonParser.getWorkoutList()
+                    if let _ = workoutList {
+                        self.postDay(workoutList: workoutList!)
+                    }
+                }
+            }
+            
+        }
+        task.resume()
+    }
+    
+    func postDay(workoutList: WorkoutList) {
+        let dayParameters: [String: Any] = ["training": workoutList.id, "description": workoutList.name]
+        var requestManager = RequestManager(urlString: Constans.urlDay)
+        let postDayRequest = requestManager.createDayPostRequest(parameters: dayParameters)
+        
+        let task = session.dataTask(with: postDayRequest) { (data, responce, error) in
+            if error != nil {
                 print(error)
             }
+            
+            if let _ = responce as? HTTPURLResponse {
+                if let safeData = data {
+                    let jsonParser = JSONParser(data: safeData)
+                    let day = jsonParser.getDay()
+                    if let _ = day {
+                        self.postSet(day: day!)
+                    }
+                }
+            }
         }
+        
+        task.resume()
+    }
+    
+    func postSet(day: Day) {
+        let setParameters: [String: Any] = ["exerciseDay": day.id]
+        var requestManager = RequestManager(urlString: Constans.urlSet)
+        let postSetRequest = requestManager.createSetPostRequest(parameters: setParameters)
+        
+        let task = session.dataTask(with: postSetRequest) { (data, responce, error) in
+            if error != nil {
+                print(error)
+            }
+            
+            if let _ = responce as? HTTPURLResponse {
+                if let safeData = data {
+                    let jsonParser = JSONParser(data: safeData)
+                    let set = jsonParser.getSet()
+                    let newWorkout = Workout(nameOfWorkout: day.description)
+                    newWorkout.dayId = day.id
+                    newWorkout.setId = set?.id
+                   
+                    delegate?.didFinishCreateWorkout(workout: newWorkout)
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
+    //MARK: - Exercise: add/update
+    
+    func postExercise(parametersToPost: [String: Any], settingIdCompletionHandler: @escaping (Int?, Error?) -> Void) {
+       
+        var requestManager = RequestManager(urlString: Constans.urlSetting)
+        let postRequest = requestManager.createSettingPostRequest(parameters: parametersToPost)
+        
+        let task = session.dataTask(with: postRequest) { (data, response, error) in
+            if error != nil {
+                print(error)
+            }
+            
+            if let _ = response as? HTTPURLResponse {
+                do {
+                    //update setting id in exercise
+                    if let safeData = data {
+                        let jsonParser = JSONParser(data: safeData)
+                        let settingId = jsonParser.getSettingId()
+                        
+                        settingIdCompletionHandler(settingId, nil)
+                        
+                    }
+                }catch {
+                    print(error)
+                    settingIdCompletionHandler(nil, error)
+                    
+                }
+            }
+        }
+        
         task.resume()
         
     }
     
-    //MARK: - Workouts list
-    func receiveWorkoutsList(){
-        let url = URL(string: Constans.urlWorkoutsList)!
-        var workoutOfTheDayArray = [WorkoutOfTheDay]()
+    func updateExercise(exercise: Exercise) {
+        let settingIdString = String(exercise.settingId!)
+        let urlString = String("\(Constans.urlSetting)\(settingIdString)/")
+        let parameters: [String: Any] = ["reps": exercise.reps] // to:do reps as INT?
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
+        var requestManager = RequestManager(urlString: urlString)
+        let patchRequest = requestManager.createPatchRequest(parameters: parameters)
         
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
-        if let token = Token.tokenKey {
-            request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
+        let task = session.dataTask(with: patchRequest) { (data, responce, error) in
+            if error != nil {
+                return
+            }
+            
+            print(responce)
         }
         
-        let task = session.dataTask(with: request) { (data, response, error) in
+        task.resume()
+    }
+    
+    //MARK: - Workouts list
+    func receiveWorkoutsList(){
+        var requestManager = RequestManager(urlString: Constans.urlWorkoutsList)
+        let getRequest = requestManager.createGetRequest()
+        
+        let task = session.dataTask(with: getRequest) { (data, response, error) in
             if error != nil {
                 return
             }
             
             if let httpsResponse = response as? HTTPURLResponse {
                 if let safeData = data {
-                    let workoutsList = self.parseJSON(safeData) // workoutList
+                    
+                    let jsonParser = JSONParser(data: safeData)
+                    let workoutsList = jsonParser.getWorkoutsList()
+                 
                     if let list = workoutsList {
                         self.performRequestWorkouts(list)
                     }else {
@@ -125,70 +181,93 @@ struct ExerciseManager {
     }
     
     func performRequestWorkouts(_ workoutsList: WorkoutsList) {
-        var workoutOfTheDayArray = [WorkoutOfTheDay]()
+        var workouts = [Workout]()
+        let group = DispatchGroup()
+        //to: do error in count of workouts!!!
         for result in workoutsList.results {
+            group.enter()
+            
             let id  = result.id
             let urlString = Constans.urlWorkout.replacingOccurrences(of: "id", with: String(id))
             
-            let url = URL(string: urlString)!
+            var requestManager = RequestManager(urlString: urlString)
+            let getRequest = requestManager.createGetRequest()
             
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
-            
-            if let token = Token.tokenKey {
-                request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
-            }
-            
-            let task = session.dataTask(with: request) { (data, response, error) in
+            let task = session.dataTask(with: getRequest) { (data, response, error) in
                 if error != nil {
                     print(error)
                     return
                 }
                 if let httpsResponse = response as? HTTPURLResponse {
                     if let safeData = data {
-                        let workoutOfTheDay = self.parseJSONAPI(safeData) // workoutList
+                        
+                        let jsonParser = JSONParser(data: safeData)
+                        let workoutOfTheDay = jsonParser.getWorkoutOfTheDay()
+                
                         if workoutOfTheDay != nil {
-                            self.delegate?.didFinishGettingWorkout(workout: workoutOfTheDay!)
+                            let newWorkouts = createWorkouts(workoutOfTheDay: workoutOfTheDay!)
+                            workouts += newWorkouts
+                            group.leave()
                         }
                     }
                 }
             }
             task.resume()
         }
-        print("count is \(workoutOfTheDayArray.count)")
+        
+        let didFinishCreateWorkouts = DispatchWorkItem {
+            self.delegate?.didFinishGettingWorkout(workout: workouts)
+        }
+        
+        group.notify(queue: .main, work: didFinishCreateWorkouts)
+      
     }
     
-    func parseJSON(_ data: Data) -> WorkoutsList? {
-        let decoder = JSONDecoder()
-        do {
-            let decoderData = try decoder.decode(WorkoutsList.self, from: data)
-            let count = decoderData.count
-            let results = decoderData.results
-
-           let workoutsList = WorkoutsList(count: count, results: results)
-
-            return workoutsList
-        } catch {
-            return nil
+    func createWorkouts(workoutOfTheDay: WorkoutOfTheDay) -> [Workout] {
+        
+        var workoutsArray = [Workout]()
+        for dayList in workoutOfTheDay.day_list {
+            
+            let day = dayList.obj
+            var newWorkout = Workout(nameOfWorkout: day.description)
+            newWorkout.dayId = day.id
+            
+            var exerciseListArray: [ExerciseList] = []
+            
+            for setList in dayList.set_list {
+                if newWorkout.setId == nil {
+                    newWorkout.setId = setList.obj.id
+                }
+                exerciseListArray += setList.exercise_list
+            }
+            
+            for exercise in exerciseListArray {
+                let newExercise = Exercise()
+                newExercise.id = exercise.obj.id
+                newExercise.name = exercise.obj.name!
+                newExercise.settingId = exercise.setting_obj_list[0].id
+                newExercise.reps = exercise.setting_obj_list[0].reps
+                
+                var descriptionOfExercise           = exercise.obj.description!.replacingOccurrences(of: "<p>", with: "")
+                descriptionOfExercise               = descriptionOfExercise.replacingOccurrences(of: "</p>", with: "")
+                newExercise.descriptionOfExercise   = descriptionOfExercise
+                
+                if exercise.comment_list.count > 0 {
+                    newExercise.comment = exercise.comment_list[0]
+                }
+                
+                for image in exercise.image_list {
+                    if image.is_main {
+                        newExercise.imageURL = image.image
+                        break
+                    }
+                }
+                newWorkout.exercises.append(newExercise)
+            }
+            workoutsArray.append(newWorkout)
         }
-
+        return workoutsArray
     }
     
-    func parseJSONAPI(_ data: Data) -> WorkoutOfTheDay? {
-        let decoder = JSONDecoder()
-        do {
-            let decoderData = try decoder.decode(WorkoutOfTheDay.self, from: data)
-            let obj = decoderData.obj
-            let dayList = decoderData.day_list
-            
-            let workoutOfDay = WorkoutOfTheDay(obj: obj, day_list: dayList)
-            
-            return workoutOfDay
-        } catch {
-            print(error)
-            return nil
-        }
-    }
+    
 }

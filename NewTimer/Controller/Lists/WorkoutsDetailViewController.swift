@@ -15,7 +15,7 @@ protocol WorkoutsDetailViewControllerDelegate: class {
     func workoutsDetailViewController(_ controller: WorkoutsDetailViewController, didFinishEditing workout: Workout)
 }
 
-class WorkoutsDetailViewController: UITableViewController, UITextFieldDelegate {
+class WorkoutsDetailViewController: UITableViewController, UITextFieldDelegate, ExerciseManagerDelegate {
     
     var workoutToEdit: Workout?
     weak var delegate: WorkoutsDetailViewControllerDelegate?
@@ -29,6 +29,7 @@ class WorkoutsDetailViewController: UITableViewController, UITextFieldDelegate {
             nameOfWorkoutTextField.text = workout.name
             doneBarButton.isEnabled = true
         }
+        exerciseManager.delegate = self
     }
     
     @IBOutlet weak var nameOfWorkoutTextField: UITextField!
@@ -37,15 +38,15 @@ class WorkoutsDetailViewController: UITableViewController, UITextFieldDelegate {
     //MARK: - Actions
 
     @IBAction func done(_ sender: Any) {
-        exerciseManager.postExercise()
+       // exerciseManager.postExercise()
         if let workout = workoutToEdit {
             workout.name = nameOfWorkoutTextField.text!
             delegate?.workoutsDetailViewController(self, didFinishEditing: workout)
         } else {
             //add workout to wger.de
             exerciseManager.postWorkout(nameOfWorkout: nameOfWorkoutTextField.text!)
-            let newWorkout = Workout(nameOfWorkout: nameOfWorkoutTextField.text!)
-            delegate?.workoutsDetailViewController(self, didFinishAdding: newWorkout)
+           // let newWorkout = Workout(nameOfWorkout: nameOfWorkoutTextField.text!)
+           // delegate?.workoutsDetailViewController(self, didFinishAdding: newWorkout)
         }
     }
     
@@ -75,5 +76,14 @@ class WorkoutsDetailViewController: UITableViewController, UITextFieldDelegate {
         return true
     }
     
+    //MARK: - Exercise Manager Delegate
+    
+    func didFinishGettingWorkout(workout: [Workout]) {
+        
+    }
+    
+    func didFinishCreateWorkout(workout: Workout) {
+        delegate?.workoutsDetailViewController(self, didFinishAdding: workout)
+    }
 
 }

@@ -49,7 +49,7 @@ class WorkoutsListViewController: UITableViewController, WorkoutsDetailViewContr
     
     //MARK: - DataModelDelegate
     
-    func didFinishCreateWorkout(workout: Workout) {
+    func didFinishCreateWorkout(workout: [Workout]) {
 //        let urlImage = Constans.urlImage + workout.urlImage!
 //        if let imageURL = URL(string: urlImage) {
 //            if let data = try? Data(contentsOf: imageURL) {
@@ -140,10 +140,12 @@ class WorkoutsListViewController: UITableViewController, WorkoutsDetailViewContr
         
         dataModel.workouts.append(workout)
         dataModel.sortWorkouts()
-        tableView.reloadData()
-       
-        navigationController?.popViewController(animated: true)
         
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.navigationController?.popViewController(animated: true)
+        }
+       
     }
     
     func workoutsDetailViewController(_ controller: WorkoutsDetailViewController, didFinishEditing workout: Workout) {

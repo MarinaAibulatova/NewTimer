@@ -19,7 +19,9 @@ class SearchExerciseTableViewController: UITableViewController, UISearchBarDeleg
         searchManager.delegate = self
     }
     weak var delegate: SearchExerciseTableViewControllerDelegate?
-    var exerciseArray: [Exercise] = [Exercise]()
+    
+    var searchResults: [SearchResult] = [SearchResult]()
+    var exercise: Exercise?
     @IBOutlet weak var searchBar: UISearchBar!
     
     var searchManager: SearchManager = SearchManager()
@@ -27,26 +29,30 @@ class SearchExerciseTableViewController: UITableViewController, UISearchBarDeleg
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return exerciseArray.count
+        return searchResults.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exerciseArray.count
+        return searchResults.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
-
-        cell.textLabel?.text = exerciseArray[indexPath.row].name
+        
+        if searchResults.count > indexPath.row {
+            cell.textLabel?.text = searchResults[indexPath.row].value
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let exercise = exerciseArray[indexPath.row]
-        delegate?.didFinishChooseExercise(exercise: exercise)
-        navigationController?.popViewController(animated: true)
+        let result = searchResults[indexPath.row]
+        searchManager.createExercise(searchResult: result)
+        
+        //delegate?.didFinishChooseExercise(exercise: self.exercise!)
+       // navigationController?.popViewController(animated: true)
     }
     
     //MARK: - UISearchBar Delegate
@@ -54,21 +60,29 @@ class SearchExerciseTableViewController: UITableViewController, UISearchBarDeleg
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         //find exercise and update tableView
-        exerciseArray.removeAll()
+        searchResults.removeAll()
         searchManager.searchExercises(orderText: searchText)
         
     }
     
     //MARK: - Search Manager Delegate
 
-    func didFinishSearchExercises(exercises: [Exercise]) {
-        exerciseArray = exercises
+    func didFinishSearchExercises(searchResults: [SearchResult]) {
+       // exerciseArray = exercises
+        self.searchResults = searchResults
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
         
+    func didFinishCreateExercise(exercise: Exercise) {
+        self.exercise = exercise
+        delegate?.didFinishChooseExercise(exercise: self.exercise!)
         
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
     
 
 }
